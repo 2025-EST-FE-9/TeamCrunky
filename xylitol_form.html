@@ -16,23 +16,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body class="bg-white font-['Noto_Sans_KR']">
-    <header class="sticky top-0 bg-white z-100 xl:px-12 py-4 text-">
-        <div id="header-content" class="relative flex items-center justify-between">
-
-            <div class="absolute left-0 toSp-0 flex items-center gap-2 xl:gap-6 text-neutral-600">
-            <!-- 로고 영역 시작 (로고이미지는 인터넷에서 가져옴)-->
-                <a href="#" class="bg-contain bg-no-repeat bg-[url('./img/h1_logo_new.png')] h-[42px] w-[135px]"></a>
+    <header class="sticky top-0 bg-white z-100">
+        <div id="header-content" class="relative">
+            <!-- logo -->
+            <div class="absolute top-4 left-5 2xl:left-12 text-neutral-600">
+                <a href="#" class="flex items-center bg-contain bg-no-repeat bg-[url('./img/h1_logo_new.png')] h-10 w-30 2xl:h-12 2xl:w-34 "></a>
+            </div>
+            <!-- language -->
+            <div class="absolute top-5 2xl:top-4 left-38 2xl:left-56 text-neutral-600">
                 <a href="#"
-                    class="flex items-center text-sm xl:text-base border-3 border-neutral-500 text-neutral-500 px-2 py-0.5 xl:py-1.5 rounded-[1.25rem]">
-                    <span class="material-symbols-outlined xl:mr-1 scale-67 xl:scale-100">language</span>
+                    class="flex justify-center items-center border-3 border-neutral-500 text-neutral-500 text-[0.9rem] 2xl:text-base px-1 2xl:px-2 py-0.5 2xl:py-1.5 rounded-3xl">
+                    <span class="flex items-center material-symbols-outlined mr-0 scale-80 2xl:scale-100">language</span>
                     ENG
                 </a>
             </div>
             <!-- main menu -->
-            <nav class="flex justify-center items-center w-screen">
-                <input type="checkbox" id="menuhover" class="hidden peer"/>
-                <label for="menuhover" class="inline-flex whitespace-nowrap text-gray-500 h-10.5">
-                    <ul class="flex text-[clamp(0.6rem,3vw,1.2rem)] gap-8 xl:gap-19 items-center text-neutral-700">
+            <nav class="flex justify-center items-center group">
+                <input type="checkbox" id="menuhover" class="hidden group"/>
+                <label for="menuhover" class="inline-flex whitespace-nowrap text-gray-500 h-18.5 sy-4">
+                    <ul class="flex text-[clamp(0.5rem,1.4vw,1.1rem)] gap-8 2xl:gap-19 items-center justify-bewteen text-center font-base text-neutral-700">
                         <li class="cursor-pointer">회사소개</li>        
                         <li class="cursor-pointer">브랜드 소개</li>
                         <li class="cursor-pointer">투자정보</li>
@@ -43,69 +45,69 @@
                     </ul>
                 </label>
                 <!-- dropdown menu -->
-                <div class="hidden peer-hover:flex justify-center items-center w-screen absolute top-14.5 text-base bg-white py-6 border-t-1 border-t-neutral-300">
-                        <ul class="flex justify-center gap-11.5">
-                            <ul class="text-neutral-500 flex flex-col items-center gap-3">
-                                <li>회사개요</li>
-                                <li>연혁</li>
-                                <li>세계속의롯데웰푸드</li>
-                                <li>사업장위치</li>
+                <div class="hidden group-hover:flex justify-center items-center w-full absolute top-18.5 right-0 bg-white py-6 border-t-1 border-t-neutral-300">
+                        <div class="flex justify-center gap-2.5 2xl:gap-11.5">
+                            <ul class="text-neutral-400 flex flex-col items-center text-[clamp(0.5rem,1.2vw,1rem)] gap-3">
+                                <li class="cursor-pointer hover:text-red-600">회사개요</li>
+                                <li class="cursor-pointer hover:text-red-600">연혁</li>
+                                <li class="cursor-pointer hover:text-red-600">세계속의롯데웰푸드</li>
+                                <li class="cursor-pointer hover:text-red-600">사업장위치</li>
                             </ul>
-                            <ul class="text-neutral-500 flex flex-col items-center gap-3">
-                                <li>제품소개</li>
-                                <li>주요브랜드</li>
-                                <li>캐릭터스토리</li>
+                            <ul class="text-neutral-400 flex flex-col items-center text-[clamp(0.5rem,1.2vw,1rem)] gap-3">
+                                <li class="cursor-pointer hover:text-red-600">제품소개</li>
+                                <li class="cursor-pointer hover:text-red-600">주요브랜드</li>
+                                <li class="cursor-pointer hover:text-red-600">캐릭터스토리</li>
                             </ul>
-                            <ul class="text-neutral-500 flex flex-col items-center gap-3">
-                                <li>주주정보</li>
-                                <li>주가정보</li>
-                                <li>재무정보</li>
-                                <li>전자공고및공시</li>
-                                <li>IR정보</li>
+                            <ul class="text-neutral-400 flex flex-col items-center text-[clamp(0.5rem,1.2vw,1rem)] gap-3">
+                                <li class="cursor-pointer hover:text-red-600">주주정보</li>
+                                <li class="cursor-pointer hover:text-red-600">주가정보</li>
+                                <li class="cursor-pointer hover:text-red-600">재무정보</li>
+                                <li class="cursor-pointer hover:text-red-600">전자공고및공시</li>
+                                <li class="cursor-pointer hover:text-red-600">IR정보</li>
                             </ul>
-                            <ul class="text-neutral-500 flex flex-col items-center gap-3">
-                                <li>ESG경영체계</li>
-                                <li>ESG 정책</li>
-                                <li>환경경영(E)</li>
-                                <li>사회공헌(S)</li>
-                                <li>안전경영(S)</li>
-                                <li>지배구조(G)</li>
-                                <li>컴플라이언스</li>
+                            <ul class="text-neutral-400 flex flex-col items-center text-[clamp(0.5rem,1.2vw,1rem)] gap-3">
+                                <li class="cursor-pointer hover:text-red-600">ESG경영체계</li>
+                                <li class="cursor-pointer hover:text-red-600">ESG 정책</li>
+                                <li class="cursor-pointer hover:text-red-600">환경경영(E)</li>
+                                <li class="cursor-pointer hover:text-red-600">사회공헌(S)</li>
+                                <li class="cursor-pointer hover:text-red-600">안전경영(S)</li>
+                                <li class="cursor-pointer hover:text-red-600">지배구조(G)</li>
+                                <li class="cursor-pointer hover:text-red-600">컴플라이언스</li>
                             </ul>
-                            <ul class="text-neutral-500 flex flex-col items-center gap-3">
-                                <li>공지사항</li>
-                                <li>뉴스자료실</li>
-                                <li>CF스토리</li>
-                                <li>LiveSocial</li>
-                                <li>가나초콜릿체</li>
-                                <li>설레임체</li>
-                                <li>닥터자일리톨버스</li>
-                                <li>이벤트</li>
-                                <li>레시피</li>
+                            <ul class="text-neutral-400 flex flex-col items-center text-[clamp(0.5rem,1.2vw,1rem)] gap-3">
+                                <li class="cursor-pointer hover:text-red-600">공지사항</li>
+                                <li class="cursor-pointer hover:text-red-600">뉴스자료실</li>
+                                <li class="cursor-pointer hover:text-red-600">CF스토리</li>
+                                <li class="cursor-pointer hover:text-red-600">LiveSocial</li>
+                                <li class="cursor-pointer hover:text-red-600">가나초콜릿체</li>
+                                <li class="cursor-pointer hover:text-red-600">설레임체</li>
+                                <li class="cursor-pointer hover:text-red-600">닥터자일리톨버스</li>
+                                <li class="cursor-pointer hover:text-red-600">이벤트</li>
+                                <li class="cursor-pointer hover:text-red-600">레시피</li>
                             </ul>
-                            <ul class="text-neutral-500 flex flex-col items-center gap-3">
-                                <li>채용공고</li>
-                                <li>인재DB</li>
-                                <li>채용정보</li>
+                            <ul class="text-neutral-400 flex flex-col items-center text-[clamp(0.5rem,1.2vw,1rem)] gap-3">
+                                <li class="cursor-pointer hover:text-red-600">채용공고</li>
+                                <li class="cursor-pointer hover:text-red-600">인재DB</li>
+                                <li class="cursor-pointer hover:text-red-600">채용정보</li>
                             </ul>
-                            <ul class="text-neutral-500 flex flex-col items-center gap-3">
-                                <li>FAQ</li>
-                                <li>고객의 소리</li>
-                                <li>아이디어 제안</li>
+                            <ul class="text-neutral-400 flex flex-col items-center text-[clamp(0.5rem,1.2vw,1rem)] gap-3">
+                                <li class="cursor-pointer hover:text-red-600">FAQ</li>
+                                <li class="cursor-pointer hover:text-red-600">고객의 소리</li>
+                                <li class="cursor-pointer hover:text-red-600">아이디어 제안</li>
                             </ul>
-                        </ul>
+                        </div>
                 </div>
             </nav>
                 
             <!-- 쇼핑몰로 이동하는 버튼 영역 시작 -->
-            <div class="absolute top-0 right-0 md:top-1 flex gap-1.5">
+            <div class="absolute right-5 top-5 2xl:top-4 2xl:right-12 flex gap-1.5">
                 <a href="#"
-                    class="border-3 border-neutral-500 text-neutral-500 px-2.5 py-0.5 xl:py-1.5 rounded-[1.25rem] text-base md:text-sm font-base cursor-pointer">
+                    class="border-3 border-neutral-500 text-neutral-500 px-2.5 py-0.5 2xl:py-1.5 rounded-3xl text-[0.9rem] 2xl:text-base cursor-pointer">
                     푸드몰
                 </a>
         
                 <a href="#"
-                    class="border-3 border-neutral-500 text-neutral-500 px-2.5 py-0.5 xl:py-1.5 rounded-[1.25rem] text-base md:text-sm font-base cursor-pointer">
+                    class="border-3 border-neutral-500 text-neutral-500 px-2.5 py-0.5 2xl:py-1.5 rounded-3xl text-[0.9rem] 2xl:text-base cursor-pointer">
                     스위트몰
                 </a>
             </div>
@@ -117,7 +119,7 @@
         <!-- top banner max-xl: max-md: -->
         <div class="relative w-full overflow-hidden">
             <!-- banner img -->
-            <img class="w-full h-full bg-cover bg-center scale-120 max-xl:scale-120 max-md:scale-120 z-0" src="img/bus-banner.jpg" alt="">
+            <img class="flex justify-center items-start w-full h-full bg-cover bg-center scale-180 2xl:scale-120 z-0" src="img/bus-banner.jpg" alt="">
             <!-- <div class="w-full h-full bg-[url('./img/bus-banner.jpg')] bg-cover bg-center scale-120 z-0"></div> -->
             <!-- banner text -->
             <div class="absolute top-3/5 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col text-center text-gray-50">
