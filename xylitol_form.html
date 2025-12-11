@@ -6,8 +6,6 @@
     <title>doctorxyl</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- ▽ icon -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,200,0,0&icon_names=keyboard_arrow_down" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=keyboard_arrow_right" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=language" />
     <!-- Noto_Sans_KR -->
@@ -16,8 +14,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body class="bg-white font-['Noto_Sans_KR']">
-    <header class="sticky top-0 bg-white z-100">
-        <div id="header-content" class="relative">
+    <header class="sticky top-0 z-100">
+        <!-- desktop header -->
+        <div id="header-content" class="relative hidden lg:block bg-white">
             <!-- logo -->
             <div class="absolute top-4 left-5 2xl:left-12 text-neutral-600">
                 <a href="#" class="flex items-center bg-contain bg-no-repeat bg-[url('./img/h1_logo_new.png')] h-10 w-30 2xl:h-12 2xl:w-34 "></a>
@@ -32,7 +31,6 @@
             </div>
             <!-- main menu -->
             <nav class="flex justify-center items-center group">
-                <input type="checkbox" id="menuhover" class="hidden group"/>
                 <label for="menuhover" class="inline-flex whitespace-nowrap text-gray-500 h-18.5 sy-4">
                     <ul class="flex text-[clamp(0.5rem,1.4vw,1.1rem)] gap-8 2xl:gap-19 items-center justify-bewteen text-center font-base text-neutral-700">
                         <li class="cursor-pointer">회사소개</li>        
@@ -112,9 +110,66 @@
                 </a>
             </div>
         </div>
+
+        <!-- mobile header -->
+        <div class="lg:hidden ">
+            <div class="relative flex justify-center items-center w-full py-4">
+                <a href="#" class="flex items-center bg-contain bg-no-repeat bg-[url('./img/h1_logo_new.png')] h-11 w-34 "></a>
+                <!-- menu button -->
+                <nav class="absolute top-4 right-4 group">
+                    <label for="menuhover0" class="inline-flex whitespace-nowrap text-gray-500 w-12 h-12">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#000"><path d="M124-245.62V-304h712v58.38H124Zm0-205.69v-58.38h712v58.38H124ZM124-657v-58.38h712V-657H124Z"/></svg>
+                    </label>
+                    <!-- dropdown menu -->
+                    <div class="hidden group-hover:block absolute -top-4 -right-4 w-[90vw] bg-neutral-300 px-8">
+                        <div class="flex justify-between items-center w-full py-4">
+                            <a href="#"
+                                class="flex justify-center items-center border-3 border-neutral-500 text-neutral-500 px-1 2xl:px-2 py-0.5 2xl:py-1.5 rounded-3xl">
+                                <span class="flex items-center material-symbols-outlined mr-0 scale-80 2xl:scale-100">language</span>
+                                ENG
+                            </a>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#000"><path d="m248.92-206.92-41-42L439-480 207.92-712.08l41-42L481-522l230.08-232.08 41 42L522-480l230.08 231.08-41 42L481-439 248.92-206.92Z"/></svg>
+                        </div>
+                        <div class="border-t-2 w-full h-full">
+                            <div class="flex justify-between h-10">
+                                <input type="checkbox" id="menutoggle5" class="hidden peer"/>
+                                <label for="menutoggle5" class="inline-flex justify-between items-center whitespace-nowrap text-black h-full w-full p-4 cursor-pointer">
+                                    회사소개
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="40px" width="40px" viewBox="0 -960 960 960" fill="#000"><path d="M480-384.85q-6.46 0-11.92-2.11-5.46-2.12-10.7-7.35L281.85-569.85q-5.62-5.61-6-13.77-.39-8.15 6-14.53 6.38-6.39 14.15-6.39 7.77 0 14.15 6.39L480-428.31l169.85-169.84q5.61-5.62 13.77-6 8.15-.39 14.53 6 6.39 6.38 6.39 14.15 0 7.77-6.39 14.15L502.62-394.31q-5.24 5.23-10.7 7.35-5.46 2.11-11.92 2.11Z"/></svg>
+                                </label>
+                                <ul class="hidden peer-checked:block w-full h-full px-6 py-4 font-semi-bold text-neutral-500 whitespace-nowrap z-90">
+                                    <li class="cursor-pointer">회사개요</li>
+                                    <li class="cursor-pointer">연혁</li>
+                                    <li class="cursor-pointer">세계속의롯데웰푸드</li>
+                                    <li class="cursor-pointer">사업장위치</li>
+                                </ul>
+                            </div>        
+                            <div class="flex justify-between h-10">
+                                <input type="checkbox" id="menutoggle6" class="hidden peer"/>
+                                <label for="menutoggle6" class="inline-flex justify-between items-center whitespace-nowrap text-black h-full w-full p-4 cursor-pointer">
+                                    브랜드 소개
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="40px" width="40px" viewBox="0 -960 960 960" fill="#000"><path d="M480-384.85q-6.46 0-11.92-2.11-5.46-2.12-10.7-7.35L281.85-569.85q-5.62-5.61-6-13.77-.39-8.15 6-14.53 6.38-6.39 14.15-6.39 7.77 0 14.15 6.39L480-428.31l169.85-169.84q5.61-5.62 13.77-6 8.15-.39 14.53 6 6.39 6.38 6.39 14.15 0 7.77-6.39 14.15L502.62-394.31q-5.24 5.23-10.7 7.35-5.46 2.11-11.92 2.11Z"/></svg>
+                                </label>
+                                <ul class="hidden peer-checked:block w-full h-full px-6 py-4 font-semi-bold text-neutral-500 whitespace-nowrap z-90">
+                                    <li class="cursor-pointer hover:text-red-600">제품소개</li>
+                                    <li class="cursor-pointer hover:text-red-600">주요브랜드</li>
+                                    <li class="cursor-pointer hover:text-red-600">캐릭터스토리</li>
+                                </ul>
+                            </div>        
+                            
+                            <li class="cursor-pointer">투자정보</li>
+                            <li class="cursor-pointer">ESG경영</li>
+                            <li class="cursor-pointer">홍보센터</li>
+                            <li class="cursor-pointer">채용</li>
+                            <li class="cursor-pointer">고객센터</li>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
     </header>
     
-    <main class="text-neutral-800 -translate-y-[74px]">
+    <main class="text-neutral-800 lg:-translate-y-[74px]">
 
         <!-- top banner max-xl: max-md: -->
         <div class="relative w-full overflow-hidden">
@@ -129,8 +184,8 @@
         </div>
 
         <!-- breadcrumb bar -->
-        <nav class="hidden lg:inline-flex sticky top-[148px] py-4 border-y bg-white border-gray-100 max-w-[1240px] m-auto h-18 z-20" aria-label="Breadcrumb">
-            <div id="dropdown" class="inline-flex items-center mx-40">
+        <nav class="hidden lg:flex sticky top-[148px] py-4 border-y bg-white border-gray-100 w-full m-0 h-18 z-20" aria-label="Breadcrumb">
+            <div id="dropdown" class="inline-flex items-center xl:ml-40">
                 <!-- home icon -->
                 <div class="flex items-center px-4">
                     <a href="#" class="text-gray-500 font-medium">
@@ -173,17 +228,17 @@
                             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#6a7282"><path d="M480-384.85q-6.46 0-11.92-2.11-5.46-2.12-10.7-7.35L281.85-569.85q-5.62-5.61-6-13.77-.39-8.15 6-14.53 6.38-6.39 14.15-6.39 7.77 0 14.15 6.39L480-428.31l169.85-169.84q5.61-5.62 13.77-6 8.15-.39 14.53 6 6.39 6.38 6.39 14.15 0 7.77-6.39 14.15L502.62-394.31q-5.24 5.23-10.7 7.35-5.46 2.11-11.92 2.11Z"/></svg>
                         </div>
                     </label>
-                        <ul class="hidden peer-checked:block w-full absolute left-0 top-10 bg-white shadow-lg shadow-gray-300 px-6 py-4 font-semi-bold text-gray-500 rounded whitespace-nowrap z-90">
-                            <li class="py-3 cursor-pointer">공지사항</li>
-                            <li class="py-3 cursor-pointer">뉴스자료실</li>
-                            <li class="py-3 cursor-pointer">CF스토리</li>
-                            <li class="py-3 cursor-pointer">LiveSocial</li>
-                            <li class="py-3 cursor-pointer">가나초코릿체</li>
-                            <li class="py-3 cursor-pointer">설레임체</li>
-                            <li class="py-3 cursor-pointer">닥터자일리톨버스</li>
-                            <li class="py-3 cursor-pointer">이벤트</li>
-                            <li class="py-3 cursor-pointer">레시피</li>
-                        </ul>  
+                    <ul class="hidden peer-checked:block w-full absolute left-0 top-10 bg-white shadow-lg shadow-gray-300 px-6 py-4 font-semi-bold text-gray-500 rounded whitespace-nowrap z-90">
+                        <li class="py-3 cursor-pointer">공지사항</li>
+                        <li class="py-3 cursor-pointer">뉴스자료실</li>
+                        <li class="py-3 cursor-pointer">CF스토리</li>
+                        <li class="py-3 cursor-pointer">LiveSocial</li>
+                        <li class="py-3 cursor-pointer">가나초코릿체</li>
+                        <li class="py-3 cursor-pointer">설레임체</li>
+                        <li class="py-3 cursor-pointer">닥터자일리톨버스</li>
+                        <li class="py-3 cursor-pointer">이벤트</li>
+                        <li class="py-3 cursor-pointer">레시피</li>
+                    </ul>  
                 </div>
                 <!-- divider -->
                 <div class="w-px h-5 bg-gray-300"></div>
@@ -196,40 +251,47 @@
                             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#6a7282"><path d="M480-384.85q-6.46 0-11.92-2.11-5.46-2.12-10.7-7.35L281.85-569.85q-5.62-5.61-6-13.77-.39-8.15 6-14.53 6.38-6.39 14.15-6.39 7.77 0 14.15 6.39L480-428.31l169.85-169.84q5.61-5.62 13.77-6 8.15-.39 14.53 6 6.39 6.38 6.39 14.15 0 7.77-6.39 14.15L502.62-394.31q-5.24 5.23-10.7 7.35-5.46 2.11-11.92 2.11Z"/></svg>
                         </div>
                     </label>
-                        <ul class="hidden peer-checked:block w-full absolute left-0 top-10 bg-white shadow-lg shadow-gray-300 px-6 py-4 font-semi-bold text-gray-500 rounded whitespace-nowrap z-90">
-                            <li class="py-3 cursor-pointer">닥터자일리톨버스 소개</li>
-                            <li class="py-3 cursor-pointer">신청접수</li>
-                        </ul>  
+                    <ul class="hidden peer-checked:block w-full absolute left-0 top-10 bg-white shadow-lg shadow-gray-300 px-6 py-4 font-semi-bold text-gray-500 rounded whitespace-nowrap z-90">
+                        <li class="py-3 cursor-pointer">닥터자일리톨버스 소개</li>
+                        <li class="py-3 cursor-pointer">신청접수</li>
+                    </ul>  
                 </div>
                 <div class="w-px h-5 bg-gray-300"></div>
             </div>
         </nav>
 
         <!-- top content -->
-        <div class="relative z-10 max-w-[1240px] m-auto">
+        <div class="relative z-10 min-w-[1024px] max-w-[1240px] m-auto">
             <!-- big tabs -->
-            <div class="flex justify-center items-center text-[clamp(1.8rem,3vw,3rem)] gap-12 my-40">
-                <span class="text-neutral-300 font-bold whitespace-nowrap cursor-pointer">닥터자일리톨버스 소개</span>
-                <span class="text-neutral-900 font-bold whitespace-nowrap cursor-pointer underline decoration-20 -underline-offset-4 decoration-red-500">신청접수</span>
-            </div>
+            <ul class="flex justify-center items-center text-[clamp(2rem,3.5vw,2.8rem)] gap-12 my-32">
+                <li class="relative text-neutral-300 font-bold whitespace-nowrap cursor-pointer">닥터자일리톨버스 소개</li>
+                <li class="relative text-neutral-900 font-bold whitespace-nowrap cursor-pointer">
+                    <div class="flex justify-center w-full items-center">
+                        <img class="absolute left-0 bottom-0 w-1 h-4" src="img/tab_line_left.png" alt="tab line">
+                        <span class="flex justify-center">
+                            <span class="z-10">신청접수</span>
+                            <img class="absolute left-1 bottom-0 w-full h-4" src="img/tab_line.png" alt="tab line">
+                        </span>
+                        <img class="absolute -right-1 bottom-0 w-1 h-4" src="img/tab_line_right.png" alt="tab line right">
+                    </div>
+                </li>
+            </ul>
             <!-- title -->
-            <div class="text-left myt-40">
-                <p class="text-neutral-900 text-[clamp(1.8rem,3vw,3rem)] font-light whitespace-nowrap">닥터자일리톨 버스가 간다!<br>
-                <span class="text-neutral-900 text-[clamp(1.8rem,3vw,3rem)] font-bold whitespace-nowrap">캠페인 처리 절차</span></p>
+            <div class="text-left px-5 xl:px-0">
+                <p class="text-neutral-900 text-[clamp(2rem,3.5vw,2.8rem)] font-light whitespace-nowrap">닥터자일리톨 버스가 간다!<br>
+                <span class="text-neutral-900 text-[clamp(2rem,3.5vw,2.8rem)] font-bold whitespace-nowrap">캠페인 처리 절차</span></p>
             </div>
         </div>
         <!-- procedure map -->
-        <div class="relative w-screen h-96 my-20">
-            <!-- map img -->
-            <div class="absolute left-0 w-full h-full overflow-x-scroll">
-                <img class="scale-150 lg:scale-100 bg-contain bg-center mt-8" src="img/campaign_steps.png" alt="">
-            </div>
+        <div class="flex justify-center w-full h-full py-5 m-auto">
+            <div class="flex items-center bg-contain bg-no-repeat bg-[url(./img/campaign_steps_m.png)] xl:bg-[url(./img/campaign_steps.png)] h-88 w-full"></div>
+            <!-- <img class=" scale-90 xl:scale-70 bg-cover bg-center overflow-auto" src="img/campaign_steps_m.png" alt=""> -->
         </div>
 
         <!-- TOS input -->
-        <div class="text-neutral-800 mt-40 w-[1240px] m-auto">
+        <div class="text-neutral-800 mt-20 max-w-[1240px] px-5 xl:px-0 m-auto">
             <div class="mt-8">
-                <span class="font-light text-5xl">개인정보 <strong class="font-bold">수집동의 </strong></span><span class="text-red-600 font-light text-xl">(필수)</span>
+                <span class="font-light text-[clamp(2rem,3.5vw,2.8rem)]">개인정보 <strong class="font-bold">수집동의 </strong></span><span class="text-red-600 font-light text-[clamp(1rem,1.5vw,1.25rem)]">(필수)</span>
             </div>
             <!-- tos text -->
             <div class="bg-gray-100 p-12 mt-12 h-56 overflow-scroll text-base/7">
@@ -260,15 +322,15 @@
                 </p>
             </div>
             <!-- tos radio -->
-            <div class="flex justify-end gap-8 mt-4 text-neutral-500">
-                <label class="flex items-center gap-4 text-xl ">
+            <div class="flex justify-end gap-8 mt-4 text-neutral-500 px-5 xl:px-0 m-auto">
+                <label class="flex items-center gap-4 text-[clamp(1rem,1.5vw,1.25rem)]">
                     <input type="radio" name="radio" value="agree" class="hidden peer">
                     <span class="w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center peer-checked:border-neutral-800"></span>
                     <span class="w-5 h-5 bg-red-600 rounded-full opacity-0 peer-checked:opacity-100 -ml-10.5">
                     </span>
                     동의
                 </label>
-                <label class="flex items-center gap-4 text-xl">
+                <label class="flex items-center gap-4 text-[clamp(1rem,1.5vw,1.25rem)]">
                     <input type="radio" name="radio" value="disagree" class="hidden peer">
                     <span class="w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center peer-checked:border-neutral-800"></span>
                     <span class="w-5 h-5 bg-red-600 rounded-full opacity-0 peer-checked:opacity-100 -ml-10.5">
@@ -279,43 +341,43 @@
         </div>
 
         <!-- Application -->
-        <div class="text-neutral-800 mt-40 w-[1240px] m-auto">
+        <div class="text-neutral-800 mt-40 max-w-[1240px] px-5 xl:px-0 m-auto">
             <!-- title -->
             <div class="text-neutral-400">
-                <span class="text-lg"><strong class="text-5xl text-neutral-800">신청서 작성 </strong>접수 내용에 대한 신속, 정확한 처리를 위해 필수입력 사항을 반드시 입력하셔야 합니다.</span>
+                <span class="text-[clamp(1rem,1.5vw,1.25rem)]"><strong class="text-[clamp(2rem,3.5vw,2.8rem)] text-neutral-800">신청서 작성 </strong>접수 내용에 대한 신속, 정확한 처리를 위해 필수입력 사항을 반드시 입력하셔야 합니다.</span>
             </div>
             <!-- input -->
             <ul class="py-10 border-y-1 border-b-neutral-200 mt-12">
                 <!-- name -->
                 <li class="relative pl-32 w-full">
-                    <label class="flex items-center absolute left-0 top-0 text-xl h-18" for="name">
+                    <label class="flex items-center absolute left-0 top-0 text-[clamp(0.9rem,1.5vw,1.25rem)] h-18" for="name">
                         성명
                         <span class="text-red-600">*</span>
                     </label>
                     <span class="w-full">
-                        <input class="text-xl px-8 w-full bg-gray-100 h-18" type="text" for="name">
+                        <input class="text-[clamp(0.9rem,1.5vw,1.25rem)] px-8 w-full bg-gray-100 h-18" type="text" for="name">
                     </span>
                 </li>
                 <!-- address -->
                 <li class="relative pl-32 w-full mt-4">
-                    <label class="flex items-center absolute left-0 top-0 text-xl h-18" for="address">
+                    <label class="flex items-center absolute left-0 top-0 text-[clamp(0.9rem,1.5vw,1.25rem)] h-18" for="address">
                         주소
                     </label>
                     <span class="flex w-full">
-                        <input class="text-xl px-8 w-full bg-gray-50 h-18" type="text" name="address" for="address" disabled>
-                        <a class="flex items-center text-xl px-8 py-4 bg-white h-18 border-1 whitespace-nowrap" href="#">주소검색</a>
+                        <input class="text-[clamp(0.9rem,1.5vw,1.25rem)] px-8 w-full bg-gray-50 h-18" type="text" name="address" for="address" disabled>
+                        <a class="flex items-center text-[clamp(0.9rem,1.5vw,1.25rem)] px-8 py-4 bg-white h-18 border-1 whitespace-nowrap" href="#">주소검색</a>
                     </span>
                     <span class="w-full">
-                        <input class="text-xl px-8 bg-gray-100 w-full h-18 mt-4" type="text" name="address" for="address" placeholder="상세주소를 입력해주세요.">
+                        <input class="text-[clamp(0.9rem,1.5vw,1.25rem)] px-8 bg-gray-100 w-full h-18 mt-4" type="text" name="address" for="address" placeholder="상세주소를 입력해주세요.">
                     </span>
                 </li>
                 <!-- contact -->
                 <li class="relative pl-32 w-full mt-4">
-                    <label class="flex items-center absolute left-0 top-0 text-xl h-18" for="numberType">
+                    <label class="flex items-center absolute left-0 top-0 text-[clamp(0.9rem,1.5vw,1.25rem)] h-18" for="numberType">
                         연락처
                         <span class="text-red-600">*</span>
                     </label>
-                    <div class="flex items-center w-full text-xl bg-gray-100">
+                    <div class="flex items-center w-full text-[clamp(0.9rem,1.5vw,1.25rem)] bg-gray-100">
                         <input class="px-8 w-full h-18" maxlength="4" type="number">
                         <span class="text-neutral-400 font-bold">-</span>
                         <input class="px-8 w-full h-18" maxlength="4" type="number">
@@ -326,29 +388,27 @@
                 <!-- detail -->
                 <li class="relative pl-32 w-full mt-4">
                     <div class="flex items-center ">
-                        <label class="flex items-center absolute left-0 top-0 text-xl h-18" for="message">
+                        <label class="flex items-center absolute left-0 top-0 text-[clamp(0.9rem,1.5vw,1.25rem)] h-18" for="message">
                             사연
                             <span class="text-red-600">*</span>
                         </label>
                         <span class="w-full h-50">
-                            <textarea class="text-xl p-4 w-full h-full bg-gray-100 overflow-hidden resize-none" type="text" for="message"></textarea>
+                            <textarea class="text-[clamp(0.9rem,1.5vw,1.25rem)] p-4 w-full h-full bg-gray-100 overflow-hidden resize-none" type="text" for="message"></textarea>
                         </span>
                     </div>
                     <p class="text-neutral-800 font-light text-sm text-right mt-4">0/2,000 Byte</p>
                 </li>
                 <!-- security -->
                 <li class="relative pl-32 w-full mt-4">
-                    <label class="flex items-center absolute left-0 top-0 text-xl h-18" for="address">
+                    <label class="flex items-center absolute left-0 top-0 text-[clamp(0.9rem,1.5vw,1.25rem)] h-18" for="address">
                         보안문자입력
                     </label>
                     <div class="flex gap-4 w-full">
                         <div>
                             <img class="h-18 bg-cover bg-center" src="img/captcha.png" alt="captcha">
                         </div>
-                        <span class="flex w-full">
-                            <input class="text-xl px-8 w-full bg-gray-100 h-18" type="text" name="address" for="address" placeholder="보안문자 6자리">
-                            <a class="flex items-center text-xl px-8 py-4 bg-white h-18 border-1 whitespace-nowrap" href="#">새로고침</a>
-                        </span>
+                        <input class="text-[clamp(0.9rem,1.5vw,1.25rem)] px-8 w-full bg-gray-100 h-18" type="text" name="address" for="address" placeholder="보안문자 6자리">
+                        <a class="flex items-center text-[clamp(0.9rem,1.5vw,1.25rem)] px-8 py-4 bg-white h-18 border-1 whitespace-nowrap" href="#">새로고침</a>
                     </div>
                 </li>
             </ul>
@@ -360,15 +420,15 @@
             </div>
             <!-- caution -->
             <div class="mt-25">
-                <span class="text-base/8 text-neutral-500">
-                    <strong class="text-neutral-800">ⓘ 유의사항</strong><br>
-                    - 응모한 사연이 본 이벤트와 무관한 내용인 경우(불건전, 광고 등) 경고 없이 삭제 처리됩니다.<br>
-                    - 응모한 사연이 타인의 저작권을 침해하는 경우, 사실이 아닌 것으로 판명될 경우에는 당첨자 발표 뒤에도 당첨이 취소될 수 있으며, 이에 따른 책임은 응모자 본인에게 있습니다.<br>
-                    - 당첨자 정보는 본 이벤트 이외에는 사용되지 않습니다.<br>
-                    - 잘못된 정보 입력으로 3회 이상 연락이 되지 않을 경우 당첨이 취소될 수 있습니다.<br>
-                    - 치과의료서비스를 타인 (또는 타 기관)에게 양도하는 것은 불가합니다.<br>
-                    - 중복당첨의 경우 당첨 공지 이후에도 취소될 수 있습니다.<br>
-                    - 이벤트 관련 문의는 운영대행사 주식회사 잘함(lotte.csr@jalham.com)을 이용해 주시면 됩니다.
+                <span class="text-[clamp(0.5rem,1.4vw,1rem)] text-neutral-500 flex flex-col gap-1">
+                    <strong class="text-neutral-800">ⓘ 유의사항</strong>
+                    <p>- 응모한 사연이 본 이벤트와 무관한 내용인 경우(불건전, 광고 등) 경고 없이 삭제 처리됩니다.</p>
+                    <p>- 응모한 사연이 타인의 저작권을 침해하는 경우, 사실이 아닌 것으로 판명될 경우에는 당첨자 발표 뒤에도 당첨이 취소될 수 있으며, 이에 따른 책임은 응모자 본인에게 있습니다.</p>
+                    <p>- 당첨자 정보는 본 이벤트 이외에는 사용되지 않습니다.</p>
+                    <p>- 잘못된 정보 입력으로 3회 이상 연락이 되지 않을 경우 당첨이 취소될 수 있습니다.</p>
+                    <p>- 치과의료서비스를 타인 (또는 타 기관)에게 양도하는 것은 불가합니다.</p>
+                    <p>- 중복당첨의 경우 당첨 공지 이후에도 취소될 수 있습니다.</p>
+                    <p>- 이벤트 관련 문의는 운영대행사 주식회사 잘함(lotte.csr@jalham.com)을 이용해 주시면 됩니다.</p>
                 </span>
             </div>
         </div>
@@ -377,29 +437,29 @@
 
     <footer>
         <div class="bg-neutral-900">
-            <!-- event recipe announcement -->
-            <div class="bg-white border-t-1 border-neutral-300">
-                <ul class="flex justify-evenly items-center m-auto w-4/5">
-                    <li class="flex justify-between items-center w-full text-2xl font-light px-8">
+            <!-- floating banner -->
+            <div class="bg-white border-t-1 border-neutral-200 ">
+                <ul class="flex justify-evenly items-center max-w-[1600px] m-auto">
+                    <li class="flex justify-between items-center w-full text-xl 2xl:text-2xl font-light px-10 2xl:pl-0">
                         <a href="#" class="flex justify-between items-center w-full py-13">
                             <span>이벤트</span>
-                            <div class="flex justify-center items-center w-11 h-11 rounded-full bg-neutral-200">
+                            <div class="flex justify-center items-center w-11 h-11 rounded-full bg-neutral-100">
                                 <span class="material-symbols-rounded">keyboard_arrow_right</span>
                             </div>
                         </a>
                     </li>
-                    <li class="flex justify-between items-center w-full text-2xl font-light px-8 border-x-1 border-neutral-300">
+                    <li class="flex justify-between items-center w-full text-xl 2xl:text-2xl font-light px-10 border-x-1 border-neutral-200">
                         <a href="#" class="flex justify-between items-center w-full py-13">
                             <span>레시피</span>
-                            <div class="flex justify-center items-center w-11 h-11 rounded-full bg-neutral-200">
+                            <div class="flex justify-center items-center w-11 h-11 rounded-full bg-neutral-100">
                                 <span class="material-symbols-rounded">keyboard_arrow_right</span>
                             </div>
                         </a>
                     </li>
-                    <li class="flex justify-between items-center w-full text-2xl font-light px-8">
+                    <li class="flex justify-between items-center w-full text-xl 2xl:text-2xl font-light px-10">
                         <a href="#" class="flex justify-between items-center w-full py-13">
                             <span>공지사항</span>
-                            <div class="flex justify-center items-center w-11 h-11 rounded-full bg-neutral-200">
+                            <div class="flex justify-center items-center w-11 h-11 rounded-full bg-neutral-100">
                                 <span class="material-symbols-rounded">keyboard_arrow_right</span>
                             </div>
                         </a>
@@ -409,27 +469,88 @@
 
             <!-- main footer -->
             <div class="relative flex justify-evenly items-center max-w-[1600px] m-auto py-[25px]">
-                <div class="absolute top-5 left-0">
+                <div class="absolute top-5 left-5 2xl:left-0">
                     <a href="#" class="inline-block bg-contain bg-no-repeat bg-[url('./img/h2_logo_new_BW.png')] h-[36px] w-[116px]"></a>
                 </div>
                 <div class="flex justify-center items-center">
                     <div>
-                        <ul class="flex justify-center items-center w-max gap-8 text-neutral-500 font-light">
-                            <li class="text-white">롯데윤리강령</li>
-                            <li class="text-white">동반성장</li>
-                            <li class="text-red-500">개인정보 처리방침</li>
-                            <li>영상정보처리기기운영관리방침</li>
-                            <li>이메일무단수집거부</li>
-                            <li>사이트맵</li>
+                        <ul class="flex justify-center items-center w-max gap-2 2xl:gap-7 text-neutral-500 text-[clamp(0.5rem,1.4vw,1rem)]">
+                            <li class="cursor-pointer text-white">롯데윤리강령</li>
+                            <li class="cursor-pointer text-white">동반성장</li>
+                            <li class="cursor-pointer text-red-600">개인정보 처리방침</li>
+                            <li class="cursor-pointer">영상정보처리기기운영관리방침</li>
+                            <li class="cursor-pointer">이메일무단수집거부</li>
+                            <li class="cursor-pointer">사이트맵</li>
                         </ul>
                     </div>
                 </div>
-                <div class="absolute top-0 right-0 border-x-1 border-x-neutral-700 text-white font-light flex justify-between items-center gap-auto h-full w-54 px-8">
+                <!-- <div class="absolute top-0 right-0 2xl:right-0 border-x-1 border-x-neutral-700 text-white font-light text-[clamp(0.5rem,1.4vw,1rem)] flex justify-between items-center gap-auto h-full w-[160px] xl:w-[216px] px-6">
                     <span>Family Site</span>
-                    <span class="material-symbols-outlined">add</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="20px" fill="#e3e3e3"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+                </div> -->
+                <div class="absolute top-0 right-0 border-x-1 border-x-neutral-700 flex justify-between items-center gap-auto h-full w-[160px] xl:w-[216px] px-6">
+                    <input type="checkbox" id="menuToggle4" class="hidden peer"/>
+                    <label for="menuToggle4" class="flex justify-between items-center gap-auto w-full cursor-pointer whitespace-nowrap text-[clamp(0.5rem,1.4vw,1rem)] text-white font-light">
+                        <span>Family Site</span>
+                        <span class="text-2xl">+</span>
+                    </label>
+                    <ul class="hidden peer-checked:block w-full absolute left-0 -top-50 border-1 bg-white px-6 py-4 text-neutral-600 text-[clamp(0.5rem,1.4vw,1rem)] w-full h-[200px] whitespace-nowrap overflow-auto z-90">
+                        <li class="cursor-pointer">롯데그룹</li>
+                        <li class="py-1 cursor-pointer">L.POINT</li>
+                        <li class="py-1 cursor-pointer">롯데채용센터</li>
+                        <li class="py-1 cursor-pointer">- 나뚜르</li>
+                        <li class="py-1 cursor-pointer">- 빼빼로</li>
+                        <li class="py-1 cursor-pointer">롯데칠성음료</li>
+                        <li class="py-1 cursor-pointer">- 롯데칠성몰</li>
+                        <li class="py-1 cursor-pointer">- WINE</li>
+                        <li class="py-1 cursor-pointer">롯데지알에스</li>
+                        <li class="py-1 cursor-pointer">롯데리아</li>
+                        <li class="py-1 cursor-pointer">- 롯데리아몰</li>
+                        <li class="py-1 cursor-pointer">엔제리너스</li>
+                        <li class="py-1 cursor-pointer">- 엔제리너스몰</li>
+                        <li class="py-1 cursor-pointer">크리스피크림도넛</li>
+                        <li class="py-1 cursor-pointer">롯데아사히주류</li>
+                        <li class="py-1 cursor-pointer">롯데백화점</li>
+                        <li class="py-1 cursor-pointer">롯데마트</li>
+                        <li class="py-1 cursor-pointer">롯데하이마트</li>
+                        <li class="py-1 cursor-pointer">토이저러스</li>
+                        <li class="py-1 cursor-pointer">롯데슈퍼</li>
+                        <li class="py-1 cursor-pointer">롯데시네마</li>
+                        <li class="py-1 cursor-pointer">롯데홈쇼핑</li>
+                        <li class="py-1 cursor-pointer">코리아세븐</li>
+                        <li class="py-1 cursor-pointer">유니클로</li>
+                        <li class="py-1 cursor-pointer">무인양품</li>
+                        <li class="py-1 cursor-pointer">롯데상사</li>
+                        <li class="py-1 cursor-pointer">롯데온</li>
+                        <li class="py-1 cursor-pointer">롯데피플네트웍스</li>
+                        <li class="py-1 cursor-pointer">샤롯데씨어터</li>
+                        <li class="py-1 cursor-pointer">롯데호텔</li>
+                        <li class="py-1 cursor-pointer">롯데면세점</li>
+                        <li class="py-1 cursor-pointer">롯데월드</li>
+                        <li class="py-1 cursor-pointer">- 워터파크</li>
+                        <li class="py-1 cursor-pointer">- 아쿠아리움</li>
+                        <li class="py-1 cursor-pointer">롯데물산</li>
+                        <li class="py-1 cursor-pointer">롯데월드타워&몰</li>
+                        <li class="py-1 cursor-pointer">롯데알미늄</li>
+                        <li class="py-1 cursor-pointer">- 롯데이라이프</li>
+                        <li class="py-1 cursor-pointer">롯데케미칼</li>
+                        <li class="py-1 cursor-pointer">롯데엠시시</li>
+                        <li class="py-1 cursor-pointer">캐논코리아 주식회사</li>
+                        <li class="py-1 cursor-pointer">롯데기공</li>
+                        <li class="py-1 cursor-pointer">롯데인재개발원</li>
+                        <li class="py-1 cursor-pointer">롯데이노베이트</li>
+                        <li class="py-1 cursor-pointer">롯데자이언츠</li>
+                        <li class="py-1 cursor-pointer">대홍기획</li>
+                        <li class="py-1 cursor-pointer">캐시비</li>
+                        <li class="py-1 cursor-pointer">마이비</li>
+                        <li class="py-1 cursor-pointer">롯데중앙연구소</li>
+                        <li class="py-1 cursor-pointer">롯데장학재단</li>
+                        <li class="py-1 cursor-pointer">롯데렌터카</li>
+                        <li class="py-1 cursor-pointer">롯데콘서트홀</li>
+                    </ul>  
                 </div>
             </div>
-            <div class="border-t-1 border-t-neutral-700 text-center text-[0.875rem] pt-4 pb-20 text-neutral-500">
+            <div class="border-t-1 border-t-neutral-700 text-center text-[0.875rem] pt-4 pb-18 text-neutral-400">
                 COPYRIGHT 2022 LOTTE WELLFOOD CO.,LTD. ALL RIGHTS RESERVED.
             </div>
         </div>
