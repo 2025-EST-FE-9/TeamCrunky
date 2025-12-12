@@ -8,8 +8,15 @@
 
 
 ## 🖥️ Preview
-| Home | Search |
-|------|--------|
+[  MAIN  ] [BannerA ] [BannerB ]
+| Header | | Header | | Header | 
+|1-------| |1-------| |1-------|
+|2-------| |2-------| |2-------|
+|3-------| |3-------| |3-------|
+|4-------| | Footer | | Footer |
+|5-------|
+|6-------|
+| Footer | 
 
 
 ## 🛠 Tech Stack
@@ -22,16 +29,13 @@
 ## 📂 Folder Structure
 ├── main.html
 │   └── HeaderFooter.html
-│   └── MainA.html
-│   └── MainB.html
-│   └── BannerA.html
-│   └── BannerB.html
-│
-├── css/
-│   └── style.css
+│   └── MainA(1~3).html
+│   └── MainB(4~6).html
+│   └── BannerA(global).html
+│   └── BannerB(bus).html
 │
 └── assets/
-    └── images/
+    └── img/
 
 
 ## 👥 Team

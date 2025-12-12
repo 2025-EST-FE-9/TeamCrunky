@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- alt + shift + F => 코드 정렬 -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mainAsection3::롯데웰푸드</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        :root {
+        /* tailwind 기본테마와 별개의 html 전역변수 */
+        --font-sans: 'Noto Sans KR';
+    }
+
+
+    @layer utilities {
+        /* Letter Spacing */
+        .tracking-tight-custom {
+            letter-spacing : -0.5px;
+        }
+    
+    
+        /* Font Size - clamp */
+        .text-main1 {
+            font-size: clamp(3.2rem, 4vw + 2rem, 5rem);
+        }
+        .text-main2 {
+            font-size: clamp(1.5rem, 2.3vw ,3rem)
+        }
+    }
+
+    .info-box li a span::after {
+        content: '';
+        display: inline-block;
+        background-image: url(./img/icon-download.png);
+        background-size: contain;
+        width: 18px;
+        height: 18px;
+        vertical-align: middle;
+        margin-left: 8px;
+    }
+
+    .info-box li a {
+        text-align: center;
+        cursor: pointer;
+        border: 3px solid white;
+        padding: 5px 15px;
+        border-radius: 20px;
+    }
+
+    /* 기본 배경 이미지 */
+    .img {
+        background-image: url(./img/main_header.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+    /* section3 */
+    .map {
+        background-image: url(./img/map_bg.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .map-w {
+        background-image: url(./img/map1.png);
+        background-size: cover;
+        background-position: center;
+    }
+
+    /* 반응형 */
+    @media (max-width:1023px) {
+        /* section1 */
+        .text-area {
+            top: 24%;
+            left: 8%;
+        }
+
+        .text-area-2 {
+            display: block;
+        }
+
+        .arrow {
+            display: none;
+        }
+
+        /* 모바일 배경 이미지 */
+        .img {
+            background-image: url(./img/main_header_1023.jpg);
+        }
+
+        .slide-bar {
+            bottom: 45%;
+        }
+
+        .info-box {
+            padding: 20px;
+            bottom: 0; /* relative 대신 absolute 기준으로 이동 */
+        }
+
+        .info-box ul {
+            flex-direction: column-reverse;
+        }
+
+        .info-box li {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .info-box li:last-child div {
+            justify-content: space-between;
+        }
+        /* section 2 */
+        .new-title {
+            margin-bottom : 2rem;
+        }
+        .new-card {
+            width: clamp(25rem, 85vw ,32rem);
+            height: clamp(15rem,55vw,22rem);
+            padding: clamp(2rem,5vw,3rem);
+            top: 70%;
+            left: 50%;
+            transform: translatex(-50%);
+            /* 영역확인 */
+            /* background-color: bisque; */
+        }
+        .card-title p {
+            font-size: clamp(19px,4vw,32px);
+        }
+        .card-sub p {
+            font-size: clamp(14px,3.1vw,18px);
+        }
+        .card-sub span {
+            display: inline-block;
+        }
+        .slide-bar2 {
+            justify-content: center;
+        }
+        .slide-prev, .slide-next {
+            display: none;
+        }
+
+        /* section3 */
+            .map {
+            background-image: url(./img/map_bg_mo.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            /* background-position: center; */
+        }
+        .map-w {
+            background-image: url(./img/map1_mo.png);
+            background-size: cover;
+            background-position: left;
+        }
+    }
+</style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <nav></nav>
+        </header>
+
+        <main>
+            <div class="main-content w-full">
+                <!-- SECTION 1 -->
+                <section class="main-info w-full relative overflow-x-hidden">
+
+                    <!-- 슬라이드 전체 -->
+                    <div class="info-slider relative h-screen w-full">
+
+                        <!-- 배경 -->
+                        <div class="bg-img absolute inset-0">
+                            <div class="img w-full h-full"></div>
+                        </div>
+
+                        <!-- TEXT -->
+                        <div
+                            class="text-area font-bold text-main1 leading-[1.2] text-white absolute top-[37%] left-[23%] lg:tracking-tight-custom">
+                            MAKE A WELL LIFE<br>
+                            롯데제과의 <span class="text-area-2">새로운 이름</span>
+                            <span class="text-area-3 block">웰컴, 롯데웰푸드</span>
+                        </div>
+
+                        <!-- ARROW -->
+                        <div class="arrow flex justify-between px-20 w-full absolute top-[45%] inset-x-0">
+                            <img class="prev" src="./img/top_visual_button1.png" alt="">
+                            <img class="next" src="./img/top_visual_button2.png" alt="">
+                        </div>
+
+                        <!-- SLIDE BAR -->
+                        <div class="slide-bar flex gap-4 text-white absolute left-1/2 bottom-[25%] -translate-x-1/2">
+                            <span>●</span>
+                            <span>●</span>
+                            <span>●</span>
+                            <span>●</span>
+                        </div>
+                    </div>
+
+                    <!-- INFO BOX -->
+                    <div class="info-box text-white absolute bottom-0 w-full z-10">
+                        <ul class="w-full flex">
+                            <li class="flex items-center bg-black/80 px-10 py-12 flex-1 overflow-x-hidden">
+                                <p class="font-bold me-5">NOTICE</p>
+                                <span>영상정보처리기기운영관리방침변경안내</span>
+                            </li>
+
+                            <li class="flex justify-between items-center bg-gray-600/80 px-10 py-12 flex-1">
+                                <p class="font-bold me-5">IR</p>
+                                <div class="w-full flex justify-between items-center">
+                                    <span>2025년 3분기</span>
+                                    <a><span>KOR</span></a>
+                                </div>
+                            </li>
+
+                            <li class="flex justify-between items-center bg-red-600/70 px-10 py-12 flex-1">
+                                <p class="font-bold me-5">STOCK</p>
+                                <div class="w-full flex justify-end items-center gap-10">
+                                    <span class="text-3xl"><strong>122,300</strong></span>
+                                    <span>▼ 300/0.24%</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <!-- section2 -->
+                <section id="main-new" class="w-full overflow-x-hidden">
+                    <h2 class="new-title font-bold text-main2 text-center mt-30 mb-20">
+                        롯데웰푸드가 새롭게 찾아왔습니다
+                    </h2>
+                    <div class="new-box mb-70 relative">
+                        <div class="new-film w-screen">
+                            <ul class="flex gap-5 max-w-1920 max-h-160 overflow-hidden justify-center">
+                                <li class="w-full max-w-310 shrink-0"><img class="h-full" src="./img/slide_img1_3.jpg"
+                                        alt=""></li>
+                                <li class="w-full  max-w-310 shrink-0"><img class="h-full" src="./img/slide_img1_2.jpg"
+                                        alt=""></li>
+                                <li class="w-full  max-w-310 shrink-0"><img class="h-full" src="./img/slide_img1_1.jpg"
+                                        alt=""></li>
+                            </ul>
+                        </div>
+                        <div
+                            class="new-card w-180 h-110 bg-white py-15 pl-18 pr-45 rounded-tl-[4rem] absolute top-[50%] left-[50%] flex flex-col justify-between">
+                            <div class="card">
+                                <div class="card-title mb-5">
+                                    <p class="font-bold text-[2.5rem] leading-[1.4]">영아기부터 중장년 이후<br>실버푸드까지</p>
+                                </div>
+                                <div class="card-sub">
+                                    <p class="text-lg text-gray-500">Food Tech의 선도기업을 지향하고 새로운 시장과 <span>지역에 대한 진출을 통해
+                                            보다 많은 사람에게 더</span><span>나은 삶을 제공합니다.</span></p>
+                                </div>
+                            </div>
+                            <div class="slide-bar2 flex items-center gap-8">
+                                <div
+                                    class="slide-prev w-10 h-10 border-1 border-gray-500 rounded-full p-3 flex justify-center items-center cursor-pointer">
+                                    <img src="./img/ico_renew_swiper_btn_prev.png" alt="">
+                                </div>
+                                <div class="flex gap-3">
+                                    <span class="text-red-400">●</span>
+                                    <span class="text-gray-300">●</span>
+                                    <span class="text-gray-300">●</span>
+                                    <span class="text-gray-300">●</span>
+                                </div>
+                                <div
+                                    class="slide-next w-10 h-10 border-1 border-gray-500 rounded-full p-3 flex justify-center items-cente cursor-pointer">
+                                    <img class="" src="./img/ico_renew_swiper_btn_next.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- section3 -->
+                <section id="main-grow w-full overflow-x-hidden">
+                    <div class="grow-box w-full">
+                        <div class="map h-auto absolute top-0 relative">
+                            <h2 class="grow-title lg:py-30 text-center font-bold text-[25px] lg:text-[50px]">
+                                글로벌리더 롯데웰푸드,
+                                <span class="block lg:inline"> 더 크게 성장하겠습니다</span>
+                            </h2>
+                            <div class="map-w w-full h-screen relative">
+                                <div class="pin-group absolute right-0 bg-red-300">
+                                    <div class="pin idx1">러시아</div>
+                                    <div class="pin idx2">카자흐스탄</div>
+                                    <div class="pin idx3">벨기에</div>
+                                    <div class="pin idx4">파키스탄</div>
+                                    <div class="pin idx5">중국</div>
+                                    <div class="pin idx6">미얀마</div>
+                                    <div class="pin idx7">인도</div>
+                                    <div class="pin idx8">싱가포르</div>
+                                </div>
+                            </div>
+                            <div class="grow-list p-10 lg:p-30">
+                                <ul>
+                                    <li>
+                                        <a href="">
+                                            <div class="img-bg">
+                                                <img src="" alt="">
+                                            </div>
+                                            <span class="">공시정보</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <div class="img-bg">
+                                                <img src="./img" alt="">
+                                            </div>
+                                            <span class="">주가정보</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <div class="img-bg">
+                                                <img src="" alt="">
+                                            </div>
+                                            <span class="">세계속의 롯데웰푸드</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="map-info absolute bottom-0">
+                            <ul>
+                                <li>
+                                    <p class="">해외법인</p>
+                                    <p class=""><span class="">8</span>개국</p>
+                                </li>
+                                <li>
+                                    <p class="">해외공장</p>
+                                    <p class=""><span class="">21</span>개</p>
+                                </li>
+                                <li>
+                                    <p class="">해외매출</p>
+                                    <p class=""><span class="">0.8</span>조</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="grow-slide">
+                            <div class="slid-prev"></div>
+                            <div class="slide-next"></div>
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+        </main>
+        <footer></footer>
+    </div>
+</body>
+
+</html>

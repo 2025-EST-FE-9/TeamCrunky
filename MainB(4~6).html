@@ -33,7 +33,137 @@
     ========================= 0000 ======================================
 
     -->
+    <style>
+        @keyframes logoAppear {
+            0% {
+                transform: translateY(2.5rem);
+                opacity: 0;
+            }
 
+            10% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            85% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes textAppear {
+            0% {
+                transform: translateY(2.5rem);
+                opacity: 0;
+            }
+
+            4% {
+                transform: translateY(2.5rem);
+                opacity: 0;
+            }
+
+            12% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            85% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes subAppear {
+            0% {
+                transform: translateY(2.5rem);
+                opacity: 0;
+            }
+
+            8% {
+                transform: translateY(2.5rem);
+                opacity: 0;
+            }
+
+            15% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            85% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes btnIncrease {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            12% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            16% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            85% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes imgIncrease {
+            0% {
+                transform: translateY(2.5rem);
+                opacity: 0;
+            }
+
+            16% {
+                transform: translateY(2.5rem);
+                opacity: 0;
+            }
+
+            20% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            85% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -42,43 +172,55 @@
         <section class="relative w-full pb-15 lg:pb-35 font-['Noto_Sans_KR',sans-serif] text-[#222]">
             <!-- 타이틀 영역 : 상단 -->
             <div
-                class="text-center mx-auto lg:w-full pt-5 lg:py-15 lg:py-40 font-bold text-[clamp(1rem,4vw,2rem)] lg:text-5xl ">
+                class="text-center mx-auto w-[54%] md:w-full lg:w-full pt-15 lg:py-40 font-bold text-[clamp(1.3rem,3vw,2rem)] lg:text-5xl ">
                 당신의 일상을 더 행복하게 만들어 줄 제품입니다</div>
             <!-- 상품 콘텐츠 박스 -->
             <div class="max-w-[1920px] w-full lg:h-full mx-auto">
                 <ul class="max-w-[1240px] w-full lg:h-[680px] mx-auto relative">
                     <!-- 슬라이드 영역 1/20 : 중단 -->
                     <li class="flex-col-reverse lg:flex-row 
-                    flex max-w-[1240px] w-full mx-auto inset-x-0 gap-20 relative">
+                    flex max-w-[1240px] w-full mx-auto inset-x-0 gap-10 lg:gap-20 relative">
                         <!-- 텍스트 박스 : 좌측 -->
                         <div class="lg:flex-1 w-full justify-center lg:inline-block items-center flex flex-col">
                             <!-- 텍스트 영역 -->
-                            <img class="lg:mb-5" src="./img/s4_icon1.png" alt="자일리톨 로고">
-                            <h2 class="font-bold text-[clamp(2.275rem,4vw,3rem)] lg:text-6xl py-4 whitespace-nowrap">
+                            <img class="lg:mb-5 animate-[logoAppear_5s_ease-in-out_infinite]" src="./img/s4_icon1.png"
+                                alt="자일리톨 로고">
+                            <h2 class="animate-[textAppear_5s_ease-in-out_infinite] leading-[1.1] font-bold text-[clamp(2.275rem,4vw,3rem)] lg:text-6xl py-4 whitespace-nowrap
+                            transition-transform duration-1000 hover:translate-y-0">
                                 100%핀란드산<br>1위 자일리톨 껌</h2>
                             <p
-                                class="lg:mb-15 lg:text-2xl text-[clamp(0.875rem,2vw,1.25rem)] text-gray-500 text-center lg:text-left whitespace-nowrap">
+                                class="animate-[subAppear_5s_ease-in-out_infinite] lg:mb-15 lg:text-2xl text-[clamp(0.875rem,2vw,1.25rem)] text-gray-500 text-center lg:text-left whitespace-nowrap">
                                 국내 껌 시장 1위! 치아를 부식시킬 수 있는 산이<br>함유되지 않은 무설탕 껌</p>
-                            <a class="border rounded-4xl px-6 py-3 border-gray-200 hidden lg:inline-block" href="#">자세히
+                            <a class="animate-[btnIncrease_5s_ease-in-out_infinite] border rounded-4xl px-6 py-3 border-gray-200 hidden lg:inline-block"
+                                href="#">자세히
                                 보기 ></a>
                         </div>
                         <!-- 이미지 영역 : 우측 -->
-                        <img class="lg:flex-1 object-contain lg:object-cover mx-auto w-[650px]" src="./img/s4_img1.png"
-                            alt="자일리톨 사진">
+                        <img class="animate-[imgIncrease_5s_ease-in-out_infinite] lg:flex-1 object-contain lg:object-cover mx-auto w-[650px]"
+                            src="./img/s4_img1.png" alt="자일리톨 사진">
                     </li>
 
                     <!-- 슬라이드 영역 2/20 : 중단 -->
-                    <li class="flex w-full mx-auto inset-x-0 gap-20 relative hidden">
+                    <li class="flex-col-reverse lg:flex-row 
+                    flex max-w-[1240px] w-full mx-auto inset-x-0 gap-10 lg:gap-20 relative hidden">
                         <!-- 텍스트 박스 : 좌측 -->
-                        <div class="flex-1 w-full">
+                        <div class="lg:flex-1 w-full justify-center lg:inline-block items-center flex flex-col">
                             <!-- 텍스트 영역 -->
-                            <img class="mb-5" src="./img/s4_icon2.png" alt="빼빼로 로고">
-                            <h2 class="font-bold text-6xl py-4">Say Hello!<br>With Pepero</h2>
-                            <p class="mb-15 text-2xl text-gray-500">빼빼로로 마음을 나누세요</p>
-                            <a class="border rounded-4xl px-4 py-2 border-gray-200" href="#">자세히 보기 ></a>
+                            <img class="lg:mb-5 animate-[logoAppear_5s_ease-in-out_infinite]" src="./img/s4_icon1.png"
+                                alt="자일리톨 로고">
+                            <h2 class="animate-[textAppear_5s_ease-in-out_infinite] leading-[1.1] font-bold text-[clamp(2.275rem,4vw,3rem)] lg:text-6xl py-4 whitespace-nowrap
+                            transition-transform duration-1000 hover:translate-y-0">
+                                100%핀란드산<br>1위 자일리톨 껌</h2>
+                            <p
+                                class="animate-[subAppear_5s_ease-in-out_infinite] lg:mb-15 lg:text-2xl text-[clamp(0.875rem,2vw,1.25rem)] text-gray-500 text-center lg:text-left whitespace-nowrap">
+                                국내 껌 시장 1위! 치아를 부식시킬 수 있는 산이<br>함유되지 않은 무설탕 껌</p>
+                            <a class="animate-[btnIncrease_5s_ease-in-out_infinite] border rounded-4xl px-6 py-3 border-gray-200 hidden lg:inline-block"
+                                href="#">자세히
+                                보기 ></a>
                         </div>
                         <!-- 이미지 영역 : 우측 -->
-                        <img class="flex-1 lg:object-cover" src="./img/s4_img2.png" alt="빼빼로 사진">
+                        <img class="animate-[imgIncrease_5s_ease-in-out_infinite] lg:flex-1 object-contain lg:object-cover mx-auto w-[650px]"
+                            src="./img/s4_img1.png" alt="자일리톨 사진">
                     </li>
 
                 </ul>
@@ -110,7 +252,7 @@
                 class="absolute inset-0 opacity-0 lg:opacity-100 -z-10 bg-[top_-390px_right_-100px] px-4 bg-[url('./img/bg_green.png')] bg-no-repeat">
             </div>
             <div
-                class="absolute inset-0 opacity-100 lg:opacity-0 -z-10 bg-[size:40%] bg-[top_-100px_right_-30px] px-4 bg-[url('./img/bg_green_mb.png')] bg-no-repeat">
+                class="absolute inset-0 opacity-100 lg:opacity-0 bg-top-right -z-10 sm:bg-[size:40%] sm:bg-[top_-100px_right_-30px] px-4 bg-[url('./img/bg_green_mb.png')] bg-no-repeat">
             </div>
         </section>
 
@@ -121,7 +263,7 @@
                 <!-- 타이틀 영역 : 상단 -->
                 <div class="lg:grid lg:grid-cols-[1fr_auto_1fr] items-center mb-5 lg:mb-20 text-center">
                     <div
-                        class="lg:col-start-2 text-center font-bold text-[clamp(1rem,3vw,2rem)] lg:text-5xl mb-5 lg:mb-0">
+                        class="lg:col-start-2 text-center font-bold text-[clamp(1.3rem,3vw,2rem)] lg:text-5xl mb-5 lg:mb-0">
                         롯데웰푸드의 새로운 소식입니다</div>
                     <a class="lg:justify-self-end lg:border lg:border-gray-200 rounded-3xl px-5 py-3 lg:bg-white"
                         href="https://www.lottewellfood.com/prcenter/news">더보기
@@ -131,17 +273,17 @@
                 <article
                     class="w-full flex overflow-x-auto gap-3 scroll-smooth lg:grid lg:grid-cols-2 lg:gap-2 lg:px-6">
                     <!-- 카드 : 좌측 -->
-                    <div class="shrink-0 w-[66%] lg:w-full group overflow-hidden cursor-pointer">
+                    <div class="shrink-0 w-[62%] lg:w-full group overflow-hidden cursor-pointer">
                         <img class="overflow-hidden object-cover w-full transition-transform duration-1000
            group-hover:scale-105"
                             src="https://webimage.ldcc.co.kr/upload/conf/upload/2025/11/12/20251112d08a2a82b06a46d.png"
                             alt="사진">
-                        <h3 class="text-[clamp(1.25rem,2vw,2rem)] lg:text-3xl font-bold mt-5 lg:mb-30">롯데웰푸드, 세계 최대
+                        <h3 class="text-[clamp(0.9rem,2vw,2rem)] lg:text-3xl font-bold mt-5 lg:mb-30">롯데웰푸드, 세계 최대
                             식품박람회 아누가(ANUGA 2025) 첫 참가 "유럽시장 공략 가속화"
                         </h3>
                     </div>
                     <!-- 카드 : 우측 -->
-                    <div class="shrink-0 w-[66%] lg:w-full group overflow-hidden cursor-pointer">
+                    <div class="shrink-0 w-[62%] lg:w-full group overflow-hidden cursor-pointer">
                         <img class="overflow-hidden rounded-br-[40px] object-cover w-full transition-transform duration-1000
            group-hover:scale-105"
                             src="https://webimage.ldcc.co.kr/upload/conf/upload/2025/11/10/20251110429182f5d2f8477.png"
@@ -152,7 +294,7 @@
                 </article>
                 <!-- 캐러셀 버튼 : 하단 -->
                 <div class="w-full lg:py-6 flex justify-center items-center pb-20 lg:pb-30">
-                    <div class="flex gap-5">
+                    <div class="flex gap-2 lg:gap-5">
                         <!-- 왼쪽 버튼 -->
                         <button type="button" class="w-11 h-11 rounded-full border border-gray-300 text-gray-500
              cursor-pointer mx-5 bg-white">&lt;</button>
@@ -232,66 +374,66 @@
             <div class="max-w-[1920px] mx-auto px-4">
                 <!-- 타이틀 영역 : 상단 -->
                 <div
-                    class="w-full mx-auto h-[20vh] text-center text-[clamp(1rem,3vw,2rem)] lg:text-5xl pt-20 lg:pt-45 font-bold mb-5 lg:mb-15">
+                    class="w-full mx-auto lg:h-[20vh] text-center text-[clamp(1.3rem,3vw,2rem)] lg:text-5xl pt-15 lg:pt-45 font-bold mb-8 lg:mb-5 lg:mb-15">
                     <span class="block lg:hidden">따뜻한 세상을 위해<br>롯데웰푸드는 실천합니다</span>
                     <span class="hidden lg:block">따뜻한 세상을 위해 롯데웰푸드는 실천합니다</span>
                 </div>
                 <!-- 메인 컨텐츠 : 중단 -->
                 <!-- 아이템 박스 -->
                 <div
-                    class="w-full mb-40 flex gap-4 overflow-x-auto scroll-smooth lg:grid lg:grid-cols-3 lg:gap-4 lg:px-4 lg:py-15 text-white">
+                    class="w-full mb-20 lg:mb-40 flex gap-4 overflow-x-auto scroll-smooth lg:grid lg:grid-cols-3 lg:gap-4 lg:px-4 lg:py-15 text-white">
                     <article
-                        class="lg:aspect-square shrink-0 w-[66%] h-[35vh] lg:h-[100%] lg:w-full flex items-center relative overflow-hidden group cursor-pointer px-4">
+                        class="lg:aspect-square shrink-0 w-[80%] h-[31vh] lg:h-[100%] lg:w-full flex items-center relative overflow-hidden group cursor-pointer px-4">
                         <img class="absolute inset-0 -z-10 w-full h-full object-cover transition-transform duration-1000
            group-hover:scale-105" src="https://www.lottewellfood.com/images/main/esg_img1.jpg" alt="사진">
-                        <div class="px-3 mt-30 lg:mt-70">
-                            <div class="font-bold text-[clamp(0.5rem,1.5rem,2.5rem)] lg:text-4xl">환경경영(E)</div>
+                        <div class="px-3 mt-55 lg:mt-40 xl:mt-50 2xl:mt-70">
+                            <div class="font-bold text-[clamp(0.5rem,3vw,2.5rem)] lg:text-4xl">환경경영(E)</div>
                             <!-- 호버 시 등장 -->
-                            <div class="space-y-6 opacity-0 translate-y-10 transition-all duration-1000 group-hover:opacity-100
-                            group-hover:translate-y-5">
-                                <h2 class="lg:py-5 text-[clamp(0.5rem,1rem,1.25rem)] lg:text-xl">환경오염을 예방하면서 경제 및 사회의
+                            <div class="lg:opacity-0 lg:translate-y-10 transition-all duration-1000 lg:group-hover:opacity-100
+                            lg:group-hover:translate-y-0">
+                                <h2 class="xl:py-5 text-[clamp(0.5rem,3vw,1.25rem)] lg:text-xl">환경오염을 예방하면서 경제 및 사회의
                                     지속가능한 개발 추구</h2>
                             </div>
-                            <div class="space-y-6 opacity-0 translate-y-15 transition-all duration-1000 group-hover:opacity-100
-                            group-hover:translate-y-5 mt-5">
+                            <div class="opacity-0 translate-y-15 transition-all duration-1000 lg:group-hover:opacity-100
+                            lg:group-hover:translate-y-0 mt-5">
                                 <a class="lg:border lg:border-white rounded-3xl lg:px-6 py-3"
                                     href="https://www.lottewellfood.com/operation/environment">자세히 보기 ></a>
                             </div>
                         </div>
                     </article>
                     <article
-                        class="lg:aspect-square  shrink-0 w-[66%] h-[35vh] lg:w-full lg:h-[100%] flex items-center relative overflow-hidden group cursor-pointer px-4">
+                        class="lg:aspect-square shrink-0 w-[80%] h-[31vh] lg:h-[100%] lg:w-full flex items-center relative overflow-hidden group cursor-pointer px-4">
                         <img class="absolute inset-0 -z-10 w-full h-full object-cover transition-transform duration-1000
            group-hover:scale-105" src="https://www.lottewellfood.com/images/main/esg_img2.jpg" alt="사진">
-                        <div class="px-3 mt-30 lg:mt-70">
-                            <div class="font-bold text-[clamp(0.5rem,1.5rem,2.5rem)] lg:text-4xl">사회공헌(S)</div>
+                        <div class="px-3 mt-55 lg:mt-40 xl:mt-50 2xl:mt-70">
+                            <div class="font-bold text-[clamp(0.5rem,3vw,2.5rem)] lg:text-4xl">사회공헌(S)</div>
                             <!-- 호버 시 등장 -->
-                            <div class="space-y-6 opacity-0 translate-y-10 transition-all duration-1000 group-hover:opacity-100
-                            group-hover:translate-y-5">
-                                <h2 class="lg:py-5 text-[clamp(0.5rem,1rem,1.25rem)] lg:text-xl">과자 기부, 지역아동센터 건립, 무료 치과
+                            <div class="lg:opacity-0 lg:translate-y-10 transition-all duration-1000 lg:group-hover:opacity-100
+                            lg:group-hover:translate-y-0">
+                                <h2 class="xl:py-5 text-[clamp(0.5rem,3vw,1.25rem)] lg:text-xl">과자 기부, 지역아동센터 건립, 무료 치과
                                     진료 등 사회공헌 활동</h2>
                             </div>
-                            <div class="space-y-6 opacity-0 translate-y-15 transition-all duration-1000 group-hover:opacity-100
-                            group-hover:translate-y-5 mt-5">
+                            <div class="opacity-0 translate-y-15 transition-all duration-1000 lg:group-hover:opacity-100
+                            lg:group-hover:translate-y-0 mt-5">
                                 <a class="lg:border lg:border-white rounded-3xl lg:px-6 py-3"
                                     href="https://www.lottewellfood.com/operation/society">자세히 보기 ></a>
                             </div>
                         </div>
                     </article>
                     <article
-                        class="lg:aspect-square  shrink-0 w-[66%] h-[35vh] lg:w-full lg:h-[100%] flex items-center relative overflow-hidden group cursor-pointer px-4">
+                        class="lg:aspect-square  shrink-0 w-[80%] h-[31vh] lg:w-full lg:h-[100%] flex items-center relative overflow-hidden group cursor-pointer px-4">
                         <img class="absolute inset-0 -z-10 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                             src="https://www.lottewellfood.com/images/main/esg_img3.jpg" alt="사진">
-                        <div class="px-3 mt-30 lg:mt-70">
-                            <div class="font-bold text-[clamp(0.5rem,1.5rem,2.5rem)] lg:text-4xl">지배구조(G)</div>
+                        <div class="px-3 mt-55 lg:mt-40 xl:mt-50 2xl:mt-70">
+                            <div class="font-bold text-[clamp(0.5rem,3vw,2.5rem)] lg:text-4xl">지배구조(G)</div>
                             <!-- 호버 시 등장 -->
-                            <div class="opacity-0 translate-y-10 transition-all duration-1000 group-hover:opacity-100
-                            group-hover:translate-y-5">
-                                <h2 class="lg:py-5 text-[clamp(0.5rem,1rem,1.25rem)] lg:text-xl">회사의 지속 성장의 바탕이 되는 건전한
+                            <div class="opacity-0 lg:translate-y-10 transition-all duration-1000 lg:group-hover:opacity-100
+                            lg:group-hover:translate-y-0">
+                                <h2 class="xl:py-5 text-[clamp(0.5rem,3vw,1.25rem)] lg:text-xl">회사의 지속 성장의 바탕이 되는 건전한
                                     지배구조 구축</h2>
                             </div>
-                            <div class="opacity-0 translate-y-18 transition-all duration-1000 group-hover:opacity-100
-                            group-hover:translate-y-5 mt-5">
+                            <div class="opacity-0 translate-y-15 transition-all duration-1000 lg:group-hover:opacity-100
+                            lg:group-hover:translate-y-0 mt-5">
                                 <a class="border border-white rounded-3xl lg:px-6 py-3"
                                     href="https://www.lottewellfood.com/operation/governance/coporate">자세히 보기 ></a>
                             </div>

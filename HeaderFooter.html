@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팀크런키 프로젝트</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- ▽ icon -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=keyboard_arrow_right" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=language" />
+    <!-- Noto_Sans_KR -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    
+</head>
+<body class="bg-white">
+    <header class="sticky top-0 z-100">
+                <div class="absolute top-4 left-5 2xl:left-12 text-neutral-600">
+                <a href="#" class="flex items-center bg-contain bg-no-repeat bg-[url('./img/h1_logo_new.png')] h-10 w-30 2xl:h-12 2xl:w-34 "></a>
+            </div>
+            <!-- language -->
+            <div class="absolute top-5 2xl:top-4 left-38 2xl:left-56 text-neutral-600">
+                <a href="#"
+                    class="flex justify-center items-center border-3 border-neutral-500 text-neutral-500 text-[0.9rem] 2xl:text-base px-1 2xl:px-2 py-0.5 2xl:py-1.5 rounded-3xl">
+                    <span class="flex items-center material-symbols-outlined mr-0 scale-80 2xl:scale-100">language</span>
+                    ENG
+                </a>
+            </div>
+
+            </div>
+            <!-- 메인메뉴 및 드롭다운메뉴 영역 -->
+            <nav class="flex justify-center items-center w-full">
+                <div class="group flex gap-16 h-18.5">
+                    <div class="flex text-[clamp(0.8rem,1vw,1.1rem)] gap-10 xl:gap-19 items-center justify-bewteen text-center font-base text-neutral-700">
+                        <div class="relative flex flex-col items-center cursor-pointer py-12">
+                            회사소개
+                            <ul class="hidden whitespace-nowrap group-hover:flex flex-col justify-center items-center gap-3 absolute top-full left-1/2 -translate-x-1/2 z-10 text-neutral-400">
+                                <li class="text-[clamp(0.5rem,1vw,0.9rem)] cursor-pointer hover:text-red-600">회사개요</li>
+                                <li class="text-[clamp(0.5rem,1vw,0.9rem)] cursor-pointer hover:text-red-600">연혁</li>
+                                <li class="text-[clamp(0.5rem,1vw,0.9rem)] cursor-pointer hover:text-red-600">세계속의롯데웰푸드</li>
+                                <li class="text-[clamp(0.5rem,1vw,0.9rem)] cursor-pointer hover:text-red-600">사업장위치</li>
+                                <li class="text-[clamp(0.5rem,1vw,0.9rem)] cursor-pointer hover:text-red-600">식품인증규격</li>
+                            </ul>
+                        </div>        
+                        <div class="relative flex flex-col items-center cursor-pointer py-12">
+                            브랜드 소개
+                            <ul class="hidden whitespace-nowrap group-hover:flex flex-col justify-center items-center gap-3 absolute top-full left-1/2 -translate-x-1/2 z-10 text-neutral-400">
+                                <li class="text-[clamp(0.5rem,1vw,0.9rem)] cursor-pointer hover:text-red-600">제품소개</li>
+                                <li class="text-[clamp(0.5rem,1vw,0.9rem)] cursor-pointer hover:text-red-600">주요브랜드</li>
+                                <li class="text-[clamp(0.5rem,1vw,0.9rem)] cursor-pointer hover:text-red-600">캐릭터스토리</li>
+                                <li class="text-[clamp(0.5rem,1vw,0.9rem)] cursor-pointer hover:text-red-600">과자상식백과</li>
+                            </ul>
+                        </div>
+                        <div class="relative flex flex-col items-center cursor-pointer py-12">
+                            투자정보
+                            <ul class="hidden whitespace-nowrap group-hover:flex flex-col justify-center items-center gap-3 absolute top-full left-1/2 -translate-x-1/2 z-10 text-neutral-400">
+                                <li class="text-[clamp(0.5rem,1vw,0.9rem)] cursor-pointer hover:text-red-600">주주정보</li>
+                                <li class="text-[clamp(0.5rem,1vw,0.9rem)] cursor-pointer hover:text-red-600">주가정보</li>
+                                <li class="text-[clamp(0.5rem,1vw,0.9rem)] cursor-pointer hover:text-red-600">재무정보</li>
+                                <li class="text-[clamp(0.5rem,1vw,0.9rem)] cursor-pointer hover:text-red-600">전자공고및공시</li>
+                                <li class="text-[clamp(0.5rem,1vw,0.9rem)] cursor-pointer hover:text-red-600">IR정보</li>
+                            </ul>
+                        </div>
+                        <div class="relative flex flex-col items-center cursor-pointer py-12">
+                            ESG경영
+                            <ul class="hidden whitespace-nowrap group-hover:flex flex-col justify-center items-center gap-3 absolute top-full left-1/2 -translate-x-1/2 z-10 text-neutral-400">
+                                <li class="text-[clamp(0.5rem,1vw,0.9rem)] cursor-pointer hover:text-red-600">ESG경영체계</li>
+                                <li class="text-[clamp(0.5rem,1vw,0.9rem)] cursor-pointer hover:text-red-600">ESG 정책</li>
+                                <li class="text-[clamp(0.5rem,1vw,0.9rem)] cursor-pointer hover:text-red-600">환경경영(E)</li>
+                                <li class="text-[clamp(0.5rem,1vw,0.9rem)] cursor-pointer hover:text-red-600">사회공헌(S)</li>
+                                <li class="text-[clamp(0.5rem,1vw,0.9rem)] cursor-pointer hover:text-red-600">안전경영(S)</li>
+                                <li class="text-[clamp(0.5rem,1vw,0.9rem)] cursor-pointer hover:text-red-600">지배구조(G)</li>
+                                <li class="text-[clamp(0.5rem,1vw,0.9rem)] cursor-pointer hover:text-red-600">컴플라이언스</li>
+                            </ul>
+                        </div>
+                        <div class="relative flex flex-col items-center cursor-pointer py-12">
+                            홍보센터
+                            <ul class="hidden whitespace-nowrap group-hover:flex flex-col justify-center items-center gap-3 absolute top-full left-1/2 -translate-x-1/2 z-10 text-neutral-400">
+                                <li class="text-[clamp(0.5rem,1vw,0.9rem)] cursor-pointer hover:text-red-600">공지사항</li>
+                                <li class="text-[clamp(0.5rem,1vw,0.9rem)] cursor-pointer hover:text-red-600">뉴스자료실</li>
+                                <li class="text-[clamp(0.5rem,1vw,0.9rem)] cursor-pointer hover:text-red-600">CF스토리</li>
+                                <li class="text-[clamp(0.5rem,1vw,0.9rem)] cursor-pointer hover:text-red-600">LiveSocial</li>
+                                <li class="text-[clamp(0.5rem,1vw,0.9rem)] cursor-pointer hover:text-red-600">가나초콜릿체</li>
+                                <li class="text-[clamp(0.5rem,1vw,0.9rem)] cursor-pointer hover:text-red-600">설레임체</li>
+                                <li class="text-[clamp(0.5rem,1vw,0.9rem)] cursor-pointer hover:text-red-600">닥터자일리톨버스</li>
+                                <li class="text-[clamp(0.5rem,1vw,0.9rem)] cursor-pointer hover:text-red-600">이벤트</li>
+                                <li class="text-[clamp(0.5rem,1vw,0.9rem)] cursor-pointer hover:text-red-600">레시피</li>
+                            </ul>
+                        </div>
+                        <div class="relative flex flex-col items-center cursor-pointer py-12">
+                            채용
+                            <ul class="hidden whitespace-nowrap group-hover:flex flex-col justify-center items-center gap-3 absolute top-full left-1/2 -translate-x-1/2 z-10 text-neutral-400">
+                                <li class="text-[clamp(0.5rem,1vw,0.9rem)] cursor-pointer hover:text-red-600">채용공고</li>
+                                <li class="text-[clamp(0.5rem,1vw,0.9rem)] cursor-pointer hover:text-red-600">인재DB</li>
+                                <li class="text-[clamp(0.5rem,1vw,0.9rem)] cursor-pointer hover:text-red-600">채용정보</li>
+                            </ul>
+                        </div>
+                        <div class="relative flex flex-col items-center cursor-pointer py-12">
+                            고객센터
+                            <ul class="hidden whitespace-nowrap group-hover:flex flex-col justify-center items-center gap-3 absolute top-full left-1/2 -translate-x-1/2 z-10 text-neutral-400">
+                                <li class="text-[clamp(0.5rem,1vw,0.9rem)] cursor-pointer hover:text-red-600">FAQ</li>
+                                <li class="text-[clamp(0.5rem,1vw,0.9rem)] cursor-pointer hover:text-red-600">고객의 소리</li>
+                                <li class="text-[clamp(0.5rem,1vw,0.9rem)] cursor-pointer hover:text-red-600">아이디어 제안</li>
+                            </ul>
+                        </div>
+                        <!--수완씨 메인그림을 가릴수 있게-->
+                        <div class="hidden group-hover:block justify-center items-center w-full h-88 absolute top-18.5 right-0 bg-white border-t-1 border-t-neutral-300"></div>
+                    </div>
+                </div>
+            </nav>
+            <!-- // 메인메뉴 및 드롭다운메뉴 영역 -->
+
+            <!-- 쇼핑몰로 이동하는 버튼 영역 시작 -->
+            <div class="absolute right-5 top-5 2xl:top-4 2xl:right-12 flex gap-1.5">
+                <a href="https://www.lottefoodmall.com/" target="_blank"
+                    class="border-3 border-neutral-500 text-neutral-500 px-2.5 py-0.5 2xl:py-1.5 rounded-3xl text-[0.9rem] 2xl:text-base cursor-pointer">
+                    푸드몰
+                </a>
+        
+                <a href="https://lottesweetmall.com/" target="_blank"
+                    class="border-3 border-neutral-500 text-neutral-500 px-2.5 py-0.5 2xl:py-1.5 rounded-3xl text-[0.9rem] 2xl:text-base cursor-pointer">
+                    스위트몰
+                </a>
+            </div>
+        </div>
+
+        <!-- 햄버거 메뉴 -->
+        <div class="lg:hidden bg-white">
+            <div class="relative flex justify-center items-center w-full py-3">
+                <div class="flex items-center justify-center h-full w-full">
+                    <a href="#" class="flex items-center justify-center bg-contain bg-no-repeat bg-[url('./img/h1_logo_new.png')] h-11 w-36 "></a>
+                </div>
+                
+                <nav class="absolute top-3 right-4">
+                    <!-- 햄버거 메뉴 열기 버튼 -->
+                    <input type="checkbox" id="menutoggle열닫" class="hidden peer"/>
+                    <label for="menutoggle열닫" class="inline-flex whitespace-nowrap text-neutral-500 w-12 h-12">
+                        <span class="p-3 text-2xl">≡</span>
+                    </label>
+                    <div class="hidden peer-checked:block absolute top-14 right-0 w-screen h-screen bg-black/50"></div>
+                    <div class="hidden peer-checked:block absolute -top-4 -right-4 h-screen">
+                        <div class="bg-white w-[80vw] h-full pl-16 pr-4">
+                            <div class="flex justify-between items-center w-full py-4">
+                                <a href="#"
+                                    class="flex border-3 border-neutral-500 text-neutral-500 px-2 py-1 rounded-3xl mt-5">
+                                    <span class="mr-0">🌐ENG</span>
+                                    
+                                </a>
+                                <!-- 햄버거 메뉴 닫기 버튼 -->
+                                <label for="menutoggle열닫" class="cursor-pointer">
+                                    <div>
+                                        <span class="p-3 top-3 text-2xl">×</span>
+                                    </div>
+                                </label>
+                            </div>
+                            <!-- 햄버거 메뉴 영역 -->
+                            <div class="border-t-2 w-full h-[80vh] py-4 mt-4 overflow-auto">
+
+                                <div class="w-full py-2">
+                                    <input type="checkbox" id="menutoggle회사" class="hidden peer"/>
+                                    <div class="flex items-center justify-between w-full mb-2">
+                                        <span class="w-full cursor-pointer text-neutral-700 text-xl font-medium">
+                                            회사정보</span>
+                                        <label for="menutoggle회사" class="cursor-pointer">
+                                            ∨
+                                        </label>
+
+                                    </div>
+                                    <ul class="hidden peer-checked:block px-6 py-4 text-neutral-500 space-y-2 text-md">
+                                        <li class="cursor-pointer">회사개요</li>
+                                        <li class="cursor-pointer">연혁</li>
+                                        <li class="cursor-pointer">세계속의롯데웰푸드</li>
+                                        <li class="cursor-pointer">사업장위치</li>
+                                        <li class="cursor-pointer">식품인증규격</li>
+                                    </ul>
+                                </div>
+                                <div class="w-full py-2">
+                                    <input type="checkbox" id="menutoggle브랜드" class="hidden peer"/>
+                                    <div class="flex items-center justify-between w-full mb-2">
+                                        <span class="w-full cursor-pointer text-neutral-700 text-xl font-medium">
+                                            브랜드 소개</span>
+                                        <label for="menutoggle브랜드" class="cursor-pointer">
+                                            ∨
+                                        </label>                       
+                                       
+                                    </div>
+                                    <ul class="hidden peer-checked:block px-6 py-4 text-neutral-500 space-y-2">
+                                        <li class="cursor-pointer">제품소개</li>
+                                        <li class="cursor-pointer">주요브랜드</li>
+                                        <li class="cursor-pointer">캐릭터스토리</li>
+                                        <li class="cursor-pointer">과자상식백과</li>
+                                    </ul>
+                                </div>
+                                <div class="w-full py-2">
+                                    <input type="checkbox" id="menutoggle투자" class="hidden peer"/>
+                                    <div class="flex items-center justify-between w-full mb-2">
+                                        <span class="w-full cursor-pointer text-neutral-700 text-xl font-medium">
+                                            투자정보</span>
+                                        <label for="menutoggle투자" class="cursor-pointer">
+                                            ∨
+                                        </label>
+                                
+
+                                    </div>
+                                    <ul class="hidden peer-checked:block px-6 py-4 text-neutral-500 space-y-2">
+                                        <li class="cursor-pointer">주주정보</li>
+                                        <li class="cursor-pointer">주가정보</li>
+                                        <li class="cursor-pointer">재무정보</li>
+                                        <li class="cursor-pointer">전자공고및공시</li>
+                                        <li class="cursor-pointer">IR정보</li>
+                                    </ul>
+                                </div>
+
+                                <div class="w-full py-2">
+                                    <input type="checkbox" id="menutoggle경영" class="hidden peer"/>
+                                    <div class="flex items-center justify-between w-full mb-2">
+                                        <span class="w-full cursor-pointer text-neutral-700 text-xl font-medium">
+                                            ESG경영</span>
+                                        <label for="menutoggle경영" class="cursor-pointer">
+                                            ∨
+                                        </label>
+
+                                    </div>
+                                    <ul class="hidden peer-checked:block px-6 py-4 text-neutral-500 space-y-2">
+                                        <li class="cursor-pointer">ESG경영체계</li>
+                                        <li class="cursor-pointer">ESG 정책</li>
+                                        <li class="cursor-pointer">환경경영(E)</li>
+                                        <li class="cursor-pointer">사회공헌(S)</li>
+                                        <li class="cursor-pointer">안전경영(S)</li>
+                                        <li class="cursor-pointer">지배구조(G)</li>
+                                        <li class="cursor-pointer">컴플라이언스</li>
+                                    </ul>
+                                </div>
+                                <div class="w-full py-2">
+                                    <input type="checkbox" id="menutoggle홍보" class="hidden peer"/>
+                                    <div class="flex items-center justify-between w-full mb-2">
+                                        <span class="w-full cursor-pointer text-neutral-700 text-xl font-medium">
+                                            홍보센터</span>
+                                        <label for="menutoggle홍보" class="cursor-pointer">
+                                            ∨
+                                        </label>
+
+                                    </div>
+                                    <ul class="hidden peer-checked:block px-6 py-4 text-neutral-500 space-y-2">
+                                        <li class="cursor-pointer">공지사항</li>
+                                        <li class="cursor-pointer">뉴스자료실</li>
+                                        <li class="cursor-pointer">CF스토리</li>
+                                        <li class="cursor-pointer">LiveSocial</li>
+                                        <li class="cursor-pointer">가나초콜릿체</li>
+                                        <li class="cursor-pointer">설레임체</li>
+                                        <li class="cursor-pointer">닥터자일리톨버스</li>
+                                        <li class="cursor-pointer">이벤트</li>
+                                        <li class="cursor-pointer">레시피</li>
+                                    </ul>
+                                </div>
+                                <div class="w-full py-2">
+                                    <input type="checkbox" id="menutoggle채용" class="hidden peer"/>
+                                    <div class="flex items-center justify-between w-full mb-2">
+                                        <span class="w-full cursor-pointer text-neutral-700 text-xl font-medium">
+                                            채용</span>
+                                        <label for="menutoggle채용" class="cursor-pointer">
+                                            ∨
+                                        </label>
+
+                                    </div>
+                                    <ul class="hidden peer-checked:block px-6 py-4 text-neutral-500 space-y-2">
+                                        <li class="cursor-pointer">채용공고</li>
+                                        <li class="cursor-pointer">인재DB</li>
+                                        <li class="cursor-pointer">채용정보</li>
+                                    </ul>
+                                </div>
+                                 <div class="w-full py-2">
+                                    <input type="checkbox" id="menutoggle고객" class="hidden peer"/>
+                                    <div class="flex items-center justify-between w-full mb-2">
+                                        <span class="w-full cursor-pointer text-neutral-700 text-xl font-medium">
+                                            고객센터</span>
+                                        <label for="menutoggle고객" class="cursor-pointer">
+                                            ∨
+                                        </label>
+
+                                    </div>
+                                    <ul class="hidden peer-checked:block px-6 py-4 text-neutral-500 space-y-2">
+                                        <li class="cursor-pointer">FAQ</li>
+                                        <li class="cursor-pointer">고객의 소리</li>
+                                        <li class="cursor-pointer">아이디어 제안</li>
+                                    </ul>
+                                </div>
+                                <div class="w-fit mt-5">
+                                    <span class="text-red-600 text-sm font-medium block mb-3 border-b-1 w-[100px] pb-5">푸드몰</span>
+                                    <span class="text-red-600 text-sm font-medium">스위트몰</span>
+                                </div>
+                            </div>
+                            <!-- //메뉴와 드롭다운 메뉴 영역 -->
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <img src="./img/우주님banner-global.png" alt="">
+    <img src="./img/우주님banner-global.png" alt="">
+    <img src="./img/우주님banner-global.png" alt="">
+    <img src="./img/우주님banner-global.png" alt="">
+    <img src="./img/우주님banner-global.png" alt="">
+    <img src="./img/우주님banner-global.png" alt="">
+    <img src="./img/우주님banner-global.png" alt="">
+    <img src="./img/우주님banner-global.png" alt="">
+    <img src="./img/우주님banner-global.png" alt="">
+    <img src="./img/우주님banner-global.png" alt="">
+    <img src="./img/우주님banner-global.png" alt="">
+    <img src="./img/우주님banner-global.png" alt="">
+    <img src="./img/우주님banner-global.png" alt="">
+    <img src="./img/우주님banner-global.png" alt="">
+    <img src="./img/우주님banner-global.png" alt="">
+    <img src="./img/우주님banner-global.png" alt="">
+    <img src="./img/우주님banner-global.png" alt="">
+    <img src="./img/우주님banner-global.png" alt="">
+    <img src="./img/우주님banner-global.png" alt="">
+    <img src="./img/우주님banner-global.png" alt="">
+    <img src="./img/우주님banner-global.png" alt="">
+    <img src="./img/우주님banner-global.png" alt="">
+    <img src="./img/우주님banner-global.png" alt="">
+    <img src="./img/우주님banner-global.png" alt="">
+
+    <footer>
+            <!-- main footer -->
+            <div class="bg-neutral-900">
+                <div class="border-b-1 border-b-gray-400">
+                    <div class="relative flex justify-evenly items-center max-w-[1600px] m-auto h-14 md:h-18 py-4">
+                        <!-- logo -->
+                        <div class="absolute top-2 md:top-4.5 left-5 lg:left-3">
+                            <a href="#" class="bg-contain h-7 w-55">
+                                <img src="./img/footer_logo.JPG" alt="footer_logo">
+                            </a>
+                        </div>
+                        <!-- family site -->
+                        <div class="absolute top-0 right-0 border-x-1 border-x-gray-400 flex justify-between items-center gap-auto h-full w-1/2 lg:w-40 xl:w-54 px-6">
+                            <input type="checkbox" id="menuToggle4" class="hidden peer"/>
+                            <label for="menuToggle4" class="flex justify-between items-center gap-auto w-full cursor-pointer whitespace-nowrap text-sm text-white font-light">
+                                <span>Family Site</span>
+                                <span class="text-2xl ml-3">+</span>
+                            </label>
+                            <ul class="hidden peer-checked:block w-full absolute left-0 -top-50 border-1 bg-white px-6 md:px-8 py-4 text-neutral-600 text-[clamp(0.8rem,1.4vw,1rem)] w-full h-50 whitespace-nowrap overflow-auto z-90">
+                                <li class="cursor-pointer">롯데그룹</li>
+                                <li class="py-1 cursor-pointer">L.POINT</li>
+                                <li class="py-1 cursor-pointer">롯데채용센터</li>
+                                <li class="py-1 cursor-pointer">- 나뚜르</li>
+                                <li class="py-1 cursor-pointer">- 빼빼로</li>
+                                <li class="py-1 cursor-pointer">롯데칠성음료</li>
+                                <li class="py-1 cursor-pointer">- 롯데칠성몰</li>
+                                <li class="py-1 cursor-pointer">- WINE</li>
+                                <li class="py-1 cursor-pointer">롯데지알에스</li>
+                                <li class="py-1 cursor-pointer">롯데리아</li>
+                                <li class="py-1 cursor-pointer">- 롯데리아몰</li>
+                                <li class="py-1 cursor-pointer">엔제리너스</li>
+                                <li class="py-1 cursor-pointer">- 엔제리너스몰</li>
+                                <li class="py-1 cursor-pointer">크리스피크림도넛</li>
+                                <li class="py-1 cursor-pointer">롯데아사히주류</li>
+                                <li class="py-1 cursor-pointer">롯데백화점</li>
+                                <li class="py-1 cursor-pointer">롯데마트</li>
+                                <li class="py-1 cursor-pointer">롯데하이마트</li>
+                                <li class="py-1 cursor-pointer">토이저러스</li>
+                                <li class="py-1 cursor-pointer">롯데슈퍼</li>
+                                <li class="py-1 cursor-pointer">롯데시네마</li>
+                                <li class="py-1 cursor-pointer">롯데홈쇼핑</li>
+                                <li class="py-1 cursor-pointer">코리아세븐</li>
+                                <li class="py-1 cursor-pointer">유니클로</li>
+                                <li class="py-1 cursor-pointer">무인양품</li>
+                                <li class="py-1 cursor-pointer">롯데상사</li>
+                                <li class="py-1 cursor-pointer">롯데온</li>
+                                <li class="py-1 cursor-pointer">롯데피플네트웍스</li>
+                                <li class="py-1 cursor-pointer">샤롯데씨어터</li>
+                                <li class="py-1 cursor-pointer">롯데호텔</li>
+                                <li class="py-1 cursor-pointer">롯데면세점</li>
+                                <li class="py-1 cursor-pointer">롯데월드</li>
+                                <li class="py-1 cursor-pointer">- 워터파크</li>
+                                <li class="py-1 cursor-pointer">- 아쿠아리움</li>
+                                <li class="py-1 cursor-pointer">롯데물산</li>
+                                <li class="py-1 cursor-pointer">롯데월드타워&몰</li>
+                                <li class="py-1 cursor-pointer">롯데알미늄</li>
+                                <li class="py-1 cursor-pointer">- 롯데이라이프</li>
+                                <li class="py-1 cursor-pointer">롯데케미칼</li>
+                                <li class="py-1 cursor-pointer">롯데엠시시</li>
+                                <li class="py-1 cursor-pointer">캐논코리아 주식회사</li>
+                                <li class="py-1 cursor-pointer">롯데기공</li>
+                                <li class="py-1 cursor-pointer">롯데인재개발원</li>
+                                <li class="py-1 cursor-pointer">롯데이노베이트</li>
+                                <li class="py-1 cursor-pointer">롯데자이언츠</li>
+                                <li class="py-1 cursor-pointer">대홍기획</li>
+                                <li class="py-1 cursor-pointer">캐시비</li>
+                                <li class="py-1 cursor-pointer">마이비</li>
+                                <li class="py-1 cursor-pointer">롯데중앙연구소</li>
+                                <li class="py-1 cursor-pointer">롯데장학재단</li>
+                                <li class="py-1 cursor-pointer">롯데렌터카</li>
+                                <li class="py-1 cursor-pointer">롯데콘서트홀</li>
+                            </ul>  
+                        </div>
+                    </div>
+                </div>
+                    <div class="flex lg:justify-center items-center mt-10 lg:-mt-12.5 px-4">
+                        <ul class="flex flex-wrap justify-start items-center w-max gap-5 2xl:gap-7 text-neutral-500 text-md lg:text-sm">
+                            <li class="cursor-pointer whitespace-nowrap text-white">롯데윤리강령</li>
+                            <li class="cursor-pointer whitespace-nowrap text-white">동반성장</li>
+                            <li class="cursor-pointer whitespace-nowrap text-red-600">개인정보 처리방침</li>
+                            <li class="cursor-pointer whitespace-nowrap">영상정보처리기기운영관리방침</li>
+                            <li class="cursor-pointer whitespace-nowrap">이메일무단수집거부</li>
+                            <li class="cursor-pointer whitespace-nowrap">사이트맵</li>
+                        </ul>
+                    </div>
+                <div class="font-sans text-left lg:text-center text-md lg:text-xs pt-3 lg:pt-10 pb-12 sm:pb-18 text-neutral-400 px-4">
+                    COPYRIGHT 2022 LOTTE WELLFOOD CO.,LTD. ALL RIGHTS RESERVED.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
