@@ -15,7 +15,7 @@
 
 
 ## Screen Preview
-🏠 Main Page
+🏠 Main Page : https://bluewave4.github.io/
 <table> <tr> <th align="center">Desktop</th> <th align="center">Mobile</th> </tr> <tr> <td align="center"> <img src="/img/main.html.png" width="420" /> </td> <td align="center"> <img src="/img/main.html(mobile).png" width="220" /> </td> </tr> </table>
 🅰️ Sub Page – Banner A (Global)
 <table> <tr> <th align="center">Desktop</th> <th align="center">Mobile</th> </tr> <tr> <td align="center"> <img src="/img/bannerA(global).html.png" width="420" /> </td> <td align="center"> <img src="/img/bannerA(global).html(mobile).png" width="220" /> </td> </tr> </table>
