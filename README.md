@@ -15,12 +15,12 @@
 
 
 ## 🖥️ Preview
-- ![Main Desktop](/img/main.html.png)
-- ![Main Mobile](/img/main.html(mobile).png)
-- ![Sub Desktop](/img/bannerA(global).html.png)
-- ![Sub Mobile](/img/bannerA(global).html(mobile).png)
-- ![Sub Desktop](/img/bannerB(bus).html.png)
-- ![Sub Mobile](/img/bannerB(global).html(mobile).png)
+🏠 Main Page
+<table> <tr> <th align="center">Desktop</th> <th align="center">Mobile</th> </tr> <tr> <td align="center"> <img src="/img/main.html.png" width="420" /> </td> <td align="center"> <img src="/img/main.html(mobile).png" width="220" /> </td> </tr> </table>
+🅰️ Sub Page – Banner A (Global)
+<table> <tr> <th align="center">Desktop</th> <th align="center">Mobile</th> </tr> <tr> <td align="center"> <img src="/img/bannerA(global).html.png" width="420" /> </td> <td align="center"> <img src="/img/bannerA(global).html(mobile).png" width="220" /> </td> </tr> </table>
+🅱️ Sub Page – Banner B (Bus)
+<table> <tr> <th align="center">Desktop</th> <th align="center">Mobile</th> </tr> <tr> <td align="center"> <img src="/img/bannerB(bus).html.png" width="420" /> </td> <td align="center"> <img src="/img/bannerB(bus).html(mobile).png" width="220" /> </td> </tr> </table>
 
 
 ## 🛠 Tech Stack
