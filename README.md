@@ -69,16 +69,16 @@
 
 
 ## Folder Structure
-├── main.html
-│   └── bannerA(global).html
-│   └── bannerB(bus).html
-├── img/
-└── _draft/ #통합 전 개인 작업 폴더 
-    └── 김준민- headerFooter
-    └── 심수완- mainA(1~3)
-    └── 김선관- mainB(4~6)
-    └── 서우주- bannerA(global)/
-    └── 권창은- bannerB(bus)/
+- main.html
+   - bannerA(global).html
+   - bannerB(bus).html
+- img/
+- _draft/ #통합 전 개인 작업 폴더 
+   - 김준민- headerFooter
+   - 심수완- mainA(1~3)
+   - 김선관- mainB(4~6)
+   - 서우주- bannerA(global)/
+   - 권창은- bannerB(bus)/
 
 
 ## Team
