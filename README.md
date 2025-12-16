@@ -70,8 +70,8 @@
 
 ## Folder Structure
 - main.html
-   - bannerA(global).html
-   - bannerB(bus).html
+- bannerA(global).html
+- bannerB(bus).html
 - img/
 - _draft/ #통합 전 개인 작업 폴더 
    - 김준민- headerFooter
