@@ -34,7 +34,7 @@
 - Git / Github
    ㄴ 파일 통합 및 협업
 
-⚙️ Implemented Features
+## Implemented Features
 - Layout & UI
    ㄴ 모바일 / 데스크톱 반응형 레이아웃
    ㄴ Flex / Grid 기반 콘텐츠 정렬
@@ -68,7 +68,7 @@
 - Positioning과 레이어 개념의 실제 활용
 
 
-## 📂 Folder Structure
+## Folder Structure
 ├── main.html
 │   └── bannerA(global).html
 │   └── bannerB(bus).html
@@ -81,7 +81,7 @@
     └── 권창은- bannerB(bus)/
 
 
-## 👥 Team
+## Team
 - 김준민: 헤더/푸터/플로팅메뉴(main)
 - 심수완: 메인페이지 1~3(main)
 - 김선관: 메인페이지 4~6(main)
