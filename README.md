@@ -27,25 +27,25 @@
 - HTML5
 - CSS3
 - Tailwind CSS
-   ㄴ 유틸리티 기반 스타일링으로 클래스 충돌 최소화
-   ㄴ 협업 환경에서 빠른 UI 구현 가능
+   - 유틸리티 기반 스타일링으로 클래스 충돌 최소화
+   - 협업 환경에서 빠른 UI 구현 가능
 - Canva (PPT)
-   ㄴ 발표 자료 및 시각적 구조 정리
+   - 발표 자료 및 시각적 구조 정리
 - Git / Github
-   ㄴ 파일 통합 및 협업
+   - 파일 통합 및 협업
 
 ## Implemented Features
 - Layout & UI
-   ㄴ 모바일 / 데스크톱 반응형 레이아웃
-   ㄴ Flex / Grid 기반 콘텐츠 정렬
-   ㄴ clamp()를 활용한 폰트 및 레이아웃 스케일링
+   - 모바일 / 데스크톱 반응형 레이아웃
+   - Flex / Grid 기반 콘텐츠 정렬
+   - clamp()를 활용한 폰트 및 레이아웃 스케일링
 - Interaction (No JavaScript)
-   ㄴ Hover 기반 인터랙션
-   ㄴ 카드형 캐러셀 UI
-   ㄴ 드롭다운 메뉴
-   ㄴ 탭 리스트 / 검색 컨트롤
-   ㄴ Breadcrumb UI
-   ㄴ 입력 요소 커스텀 스타일링
+   - Hover 기반 인터랙션
+   - 카드형 캐러셀 UI
+   - 드롭다운 메뉴
+   - 탭 리스트 / 검색 컨트롤
+   - Breadcrumb UI
+   - 입력 요소 커스텀 스타일링
       → input + label + peer 패턴 활용
 
 
