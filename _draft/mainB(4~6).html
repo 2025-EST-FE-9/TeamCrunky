@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="output.css"> -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- npx @tailwindcss/cli -i ./styles.css -o ./output.css --watch -->
+
+    <!-- 
+            ========================= 학습필요 ======================================
+                ★. grid/flex 레이아웃 사이즈 설정
+                    - bg-[url('image')] > 애니메이션 효과를 줄 때는 글자 / div 분리
+                2. clamp(min, 선호, max) > 반응형웹
+                    - 카드 요소(+오버플로우-히든)
+                    - 레이아웃 유지
+                3. 미디어쿼리
+                4. 슬라이드 버튼+효과
+                    - 자동 슬라이드 + 자동on/off
+                    - relative 활용한 슬라이드 효과
+    
+    -------------------------------------------------------------------------
+      줄1 - 레이아웃
+      줄2 - 그외에
+      줄3 - lg 레이아웃
+      줄4 - lg 그외에
+    -------------------------------------------------------------------------
+    1. text-[clam(1.5rem,3vw,2rem)] > 최대 최소 균일화 필요
+    2. 11
+    ========================= 0000 ======================================
+
+    -->
+    <style>
+        @keyframes logoAppear {
+            0% {
+                transform: translateY(2.5rem);
+                opacity: 0;
+            }
+
+            10% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            85% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes textAppear {
+            0% {
+                transform: translateY(2.5rem);
+                opacity: 0;
+            }
+
+            4% {
+                transform: translateY(2.5rem);
+                opacity: 0;
+            }
+
+            12% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            85% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes subAppear {
+            0% {
+                transform: translateY(2.5rem);
+                opacity: 0;
+            }
+
+            8% {
+                transform: translateY(2.5rem);
+                opacity: 0;
+            }
+
+            15% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            85% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes btnIncrease {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            12% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            16% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            85% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes imgAppear {
+            0% {
+                transform: translateY(2.5rem);
+                opacity: 0;
+            }
+
+            16% {
+                transform: translateY(2.5rem);
+                opacity: 0;
+            }
+
+            20% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            85% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes imgIncrease {
+            0% {
+                transform: scaleX(0.7) translateY(5.5rem);
+                opacity: 0;
+            }
+
+            10% {
+                transform: scaleX(0.7) translateY(5.5rem);
+                opacity: 0;
+            }
+
+            15% {
+                transform: scaleX(1) translateY(0);
+                opacity: 1;
+            }
+
+            85% {
+                transform: scaleX(1) translateY(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scaleX(1) translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes textXppear {
+            0% {
+                transform: translateX(-4rem);
+                opacity: 0;
+            }
+
+            13% {
+                transform: translateX(-4rem);
+                opacity: 0;
+            }
+
+            18% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+
+            85% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <!-- 메인페이지 4 mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm-->
+        <section class="relative w-full pb-15 lg:pb-35 text-[#222]">
+            <!-- 타이틀 영역 : 상단 -->
+            <h2
+                class="text-center mx-auto w-[54%] md:w-full lg:w-full pt-15 lg:py-40 font-bold text-[clamp(1.3rem,3vw,2rem)] lg:text-5xl ">
+                당신의 일상을 더 행복하게 만들어 줄 제품입니다</h2>
+
+            <!-- 상품 콘텐츠 박스 -->
+            <div class="max-w-[1920px] w-full lg:h-full mx-auto">
+                <ul class="max-w-[1240px] lg:h-[680px] mx-auto relative">
+                    <!-- 슬라이드 영역 1/20 : 중단 -->
+                    <li class="flex-col-reverse lg:flex-row 
+                    flex w-full mx-auto inset-x-0 gap-10 lg:gap-20 relative">
+                        <!-- 텍스트 박스 : 좌측 -->
+                        <article class="lg:flex-1 w-full justify-center lg:inline-block items-center flex flex-col">
+                            <!-- 텍스트 영역 -->
+                            <img class="lg:mb-5 animate-[logoAppear_5s_ease-in-out_infinite]" src="/img/s4_icon1.png"
+                                alt="자일리톨 로고">
+                            <h3 class="animate-[textAppear_5s_ease-in-out_infinite] leading-[1.1] font-bold text-[clamp(2.275rem,4vw,3rem)] lg:text-6xl py-4 whitespace-nowrap
+                            transition-transform duration-1000">
+                                100%핀란드산<br>1위 자일리톨 껌</h3>
+                            <p
+                                class="animate-[subAppear_5s_ease-in-out_infinite] lg:mb-15 lg:text-2xl text-[clamp(0.875rem,2vw,1.25rem)] text-gray-500 text-center lg:text-left whitespace-nowrap">
+                                국내 껌 시장 1위! 치아를 부식시킬 수 있는 산이<br>함유되지 않은 무설탕 껌</p>
+                            <a class="animate-[btnIncrease_5s_ease-in-out_infinite] border rounded-4xl px-6 py-3 border-gray-200 hidden lg:inline-block"
+                                href="#">자세히
+                                보기 ></a>
+                        </article>
+                        <!-- 상품 이미지 영역 : 우측 -->
+                        <img class="animate-[imgAppear_5s_ease-in-out_infinite] lg:flex-1 object-contain lg:object-cover mx-auto w-[650px]"
+                            src="/img/s4_img1.png" alt="자일리톨 사진">
+                    </li>
+                    <!-- 슬라이드 영역 2/20 : 중단 -->
+                    <li class="flex-col-reverse lg:flex-row 
+                    flex max-w-[1240px] w-full mx-auto inset-x-0 gap-10 lg:gap-20 relative hidden">
+                        <!-- 텍스트 박스 : 좌측 -->
+                        <article class="lg:flex-1 w-full justify-center lg:inline-block items-center flex flex-col">
+                            <!-- 텍스트 영역 -->
+                            <img class="lg:mb-5 animate-[logoAppear_5s_ease-in-out_infinite]" src="/img/s4_icon1.png"
+                                alt="자일리톨 로고">
+                            <h3 class="animate-[textAppear_5s_ease-in-out_infinite] leading-[1.1] font-bold text-[clamp(2.275rem,4vw,3rem)] lg:text-6xl py-4 whitespace-nowrap
+                            transition-transform duration-1000">
+                                100%핀란드산<br>1위 자일리톨 껌</h3>
+                            <p
+                                class="animate-[subAppear_5s_ease-in-out_infinite] lg:mb-15 lg:text-2xl text-[clamp(0.875rem,2vw,1.25rem)] text-gray-500 text-center lg:text-left whitespace-nowrap">
+                                국내 껌 시장 1위! 치아를 부식시킬 수 있는 산이<br>함유되지 않은 무설탕 껌</p>
+                            <a class="animate-[btnIncrease_5s_ease-in-out_infinite] border rounded-4xl px-6 py-3 border-gray-200 hidden lg:inline-block"
+                                href="#">자세히
+                                보기 ></a>
+                        </article>
+                        <!-- 이미지 영역 : 우측 -->
+                        <img class="animate-[imgAppear_5s_ease-in-out_infinite] lg:flex-1 object-contain lg:object-cover mx-auto w-[650px]"
+                            src="/img/s4_img1.png" alt="자일리톨 사진">
+                    </li>
+                </ul>
+
+                <!-- 슬라이드 컨트롤 : 하단 -->
+                <div
+                    class="flex max-w-[1240px] w-full h-[48px] gap-3 mx-auto justify-center lg:justify-start items-center font-bold mt-10 lg:mt-0 gap-1">
+                    <div
+                        class="hidden lg:block w-10 h-10 border-1 border-gray-400 rounded-full p-3 flex justify-center items-center cursor-pointer">
+                        <img src="/img/ico_renew_swiper_btn_prev.png" alt="" />
+                    </div>
+                    <span class="text-red-500">1</span>
+                    <span class="mx-2">/</span>
+                    <span>20</span>
+                    <div
+                        class="hidden lg:block w-10 h-10 border-1 border-gray-400 rounded-full p-3 flex justify-center items-center cursor-pointer">
+                        <img src="/img/ico_renew_swiper_btn_next.png" alt="" />
+                    </div>
+                    <!-- 재생/일시정지 버튼 -->
+                    <div class="text-center">
+                        <label class="cursor-pointer inline-flex items-center">
+                            <input type="checkbox" class="peer hidden">
+                            <!-- 재생 버튼 -->
+                            <span class="px-5 py-2 rounded transition-all peer-checked:hidden">▶</span>
+                            <!-- 일시정지 버튼 -->
+                            <span
+                                class="hidden font-bold px-5 py-2 rounded transition-all peer-checked:inline-flex">ll</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 백그라운드 이미지(PC/모바일) -->
+            <div
+                class="absolute inset-0 opacity-0 lg:opacity-100 -z-10 bg-[top_-390px_right_-100px] px-4 bg-[url('/img/bg_green.png')] bg-no-repeat">
+            </div>
+            <div
+                class="absolute inset-0 opacity-100 lg:opacity-0 bg-top-right -z-10 sm:bg-[size:40%] sm:bg-[top_-100px_right_-30px] px-4 bg-[url('/img/bg_green_mb.png')] bg-no-repeat">
+            </div>
+        </section>
+
+        <!-- 메인페이지 5 mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm-->
+        <section class="w-full">
+            <div class="max-w-[1920px] mx-auto px-4 pt-15 lg:pt-35 bg-gray-100 text-[#222]">
+                <!-- 타이틀 영역 : 상단 -->
+                <div class="lg:grid lg:grid-cols-[1fr_auto_1fr] items-center mb-5 lg:mb-20 text-center">
+                    <h2
+                        class="lg:col-start-2 text-center font-bold text-[clamp(1.3rem,3vw,2rem)] lg:text-5xl mb-5 lg:mb-0">
+                        롯데웰푸드의 새로운 소식입니다</h2>
+                    <a class="lg:justify-self-end lg:border lg:border-gray-200 rounded-3xl px-5 py-3 lg:bg-white"
+                        href="https://www.lottewellfood.com/prcenter/news">더보기
+                        ></a>
+                </div>
+
+                <!-- 슬라이드 영역 : 중단 -->
+                <div class="w-full overflow-x-auto scroll-smooth scroll-snap"> <!-- 슬라이드 트랙 -->
+                    <ul class="flex flex-nowrap gap-3 transition-transform duration-700">
+                        <!-- 슬라이드 카드1 -------------------->
+                        <li class="w-[122vw] lg:w-full shrink-0 flex gap-3 lg:grid lg:grid-cols-2 lg:gap-2 lg:px-6">
+                            <!-- 카드 : 좌측 -->
+                            <article class="lg:w-full group overflow-hidden cursor-pointer">
+                                <div class="overflow-hidden"> <img
+                                        class="object-cover w-full transition-transform duration-1000 group-hover:scale-105"
+                                        src="/img/s5_banner_img1_left.png" alt="사진"> </div>
+                                <h3 class="text-[clamp(0.9rem,2vw,2rem)] lg:text-3xl font-bold mt-5 lg:mb-30">롯데웰푸드,
+                                    ‘2025 CSR 필름 페스티벌 어워드’ 기재부 장관상 수상 </h3>
+                            </article> <!-- 카드 : 우측 -->
+                            <article class="lg:w-full group overflow-hidden cursor-pointer">
+                                <div class="overflow-hidden"> <img
+                                        class="rounded-br-[40px] object-cover w-full transition-transform duration-1000 group-hover:scale-105"
+                                        src="/img/s5_banner_img1_right.png" alt="사진"> </div>
+                                <h3 class="text-[clamp(0.9rem,2vw,2rem)] lg:text-3xl font-bold mt-5 lg:mb-30">롯데웰푸드, 인천시
+                                    서구 예지유치원에서 치아건강 실천 유치원 인증식 진행</h3>
+                            </article>
+                        </li> <!-- 슬라이드 카드2 -------------------->
+                        <li class="w-[122vw] lg:w-full shrink-0 flex gap-3 lg:grid lg:grid-cols-2 lg:gap-2 lg:px-6">
+                            <!-- 카드 : 좌측 -->
+                            <article class="lg:w-full group overflow-hidden cursor-pointer">
+                                <div class="overflow-hidden"> <img
+                                        class="object-cover w-full transition-transform duration-1000 group-hover:scale-105"
+                                        src="/img/s5_banner_img2_left.png" alt="사진"> </div>
+                                <h3 class="text-[clamp(0.9rem,2vw,2rem)] lg:text-3xl font-bold mt-5 lg:mb-30">지역 소상공인 상생
+                                    캠페인 '어썸바잇트' 품평회 성료 롯데웰푸드, 효녀 심청이 추천 맛집 전국 팔도에 알린다! </h3>
+                            </article> <!-- 카드 : 우측 -->
+                            <article class="lg:w-full group overflow-hidden cursor-pointer">
+                                <div class="overflow-hidden"> <img
+                                        class="rounded-br-[40px] object-cover w-full transition-transform duration-1000 group-hover:scale-105"
+                                        src="/img/s5_banner_img2_right.png" alt="사진"> </div>
+                                <h3 class="text-[clamp(0.9rem,2vw,2rem)] lg:text-3xl font-bold mt-5 lg:mb-30">바쁜 직장인부터
+                                    자취생들의 든든한 아침 한 끼 롯데웰푸드, '식사이론 진국'으로 컵밥 시장 본격 진출</h3>
+                            </article>
+                        </li> <!-- 슬라이드 카드3 -------------------->
+                        <li class="w-[122vw] lg:w-full shrink-0 flex gap-3 lg:grid lg:grid-cols-2 lg:gap-2 lg:px-6">
+                            <!-- 카드 : 좌측 -->
+                            <article class="lg:w-full group overflow-hidden cursor-pointer">
+                                <div class="overflow-hidden"> <img
+                                        class="overflow-hidden object-cover w-full transition-transform duration-1000 group-hover:scale-105"
+                                        src="/img/s5_banner_img3_left.png" alt="사진"> </div>
+                                <h3 class="text-[clamp(0.9rem,2vw,2rem)] lg:text-3xl font-bold mt-5 lg:mb-30">롯데웰푸드,
+                                    한국ESG기준원 ESG평가서 2년 연속 A등급 획득 </h3>
+                            </article> <!-- 카드 : 우측 -->
+                            <article class="lg:w-full group overflow-hidden cursor-pointer">
+                                <div class="overflow-hidden"> <img
+                                        class="overflow-hidden rounded-br-[40px] object-cover w-full transition-transform duration-1000 group-hover:scale-105"
+                                        src="/img/s5_banner_img3_right.jpg" alt="사진"> </div>
+                                <h3 class="text-[clamp(0.9rem,2vw,2rem)] lg:text-3xl font-bold mt-5 lg:mb-30">롯데웰푸드, 경남
+                                    남해 해피홈 12호 아이들과 즐거운 '해피피크닉'</h3>
+                            </article>
+                        </li> <!-- 슬라이드 카드4 -------------------->
+                        <li class="w-[122vw] lg:w-full shrink-0 flex gap-3 lg:grid lg:grid-cols-2 lg:gap-2 lg:px-6">
+                            <!-- 카드 : 좌측 -->
+                            <article class="lg:w-full group overflow-hidden cursor-pointer">
+                                <div class="overflow-hidden"> <img
+                                        class="overflow-hidden object-cover w-full transition-transform duration-1000 group-hover:scale-105"
+                                        src="/img/s5_banner_img4_left.jpg" alt="사진"> </div>
+                                <h3 class="text-[clamp(0.9rem,2vw,2rem)] lg:text-3xl font-bold mt-5 lg:mb-30">롯데햄과 해물맛
+                                    스낵 오잉이 맛있게 만났다! 롯데웰푸드, 바다 풍미 가득 '롯데햄 X 오잉' 라인업 확대 </h3>
+                            </article> <!-- 카드 : 우측 -->
+                            <article class="lg:w-full group overflow-hidden cursor-pointer">
+                                <div class="overflow-hidden"> <img
+                                        class="overflow-hidden rounded-br-[40px] object-cover w-full transition-transform duration-1000 group-hover:scale-105"
+                                        src="/img/s5_banner_img4_right.png" alt="사진"> </div>
+                                <h3 class="text-[clamp(0.9rem,2vw,2rem)] lg:text-3xl font-bold mt-5 lg:mb-30">롯데웰푸드,
+                                    '크리스마스 에디션' 아이스크림 3종 출시</h3>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 캐러셀 버튼 : 하단 -->
+                <div class="w-full lg:py-6 flex justify-center items-center pb-20 lg:pb-30 mt-5">
+                    <div class="flex gap-3">
+                        <!-- 왼쪽 버튼 -->
+                        <div
+                            class="hidden lg:block w-10 h-10 border-1 border-gray-400 rounded-full p-3 flex justify-center items-center cursor-pointer bg-white">
+                            <img src="/img/ico_renew_swiper_btn_prev.png" alt="" />
+                        </div>
+                        <!-- dot 1 -->
+                        <div class="flex items-center">
+                            <input type="radio" name="slide" id="slide1" class="peer/s1 hidden" checked />
+                            <label for="slide1" class="w-2 h-2 rounded-full bg-gray-300 cursor-pointer
+               transition-all duration-300
+               peer-checked/s1:bg-red-700"></label>
+                        </div>
+                        <!-- dot 2 -->
+                        <div class="flex items-center">
+                            <input type="radio" name="slide" id="slide2" class="peer/s2 hidden" />
+                            <label for="slide2" class="w-2 h-2 rounded-full bg-gray-300 cursor-pointer
+               transition-all duration-300
+               peer-checked/s2:bg-red-700"></label>
+                        </div>
+                        <!-- dot 3 -->
+                        <div class="flex items-center">
+                            <input type="radio" name="slide" id="slide3" class="peer/s3 hidden" />
+                            <label for="slide3" class="w-2 h-2 rounded-full bg-gray-300 cursor-pointer
+               transition-all duration-300
+               peer-checked/s3:bg-red-700"></label>
+                        </div>
+                        <!-- dot 4 -->
+                        <div class="flex items-center">
+                            <input type="radio" name="slide" id="slide4" class="peer/s4 hidden" />
+                            <label for="slide4" class="w-2 h-2 rounded-full bg-gray-300 cursor-pointer
+               transition-all duration-300
+               peer-checked/s4:bg-red-700"></label>
+                        </div>
+                        <!-- 오른쪽 버튼 -->
+                        <div
+                            class="hidden lg:block w-10 h-10 border-1 border-gray-400 rounded-full p-3 flex justify-center items-center cursor-pointer bg-white">
+                            <img src="/img/ico_renew_swiper_btn_next.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 메인페이지 6 mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm-->
+        <section class="w-full text-[#222]">
+            <div class="max-w-[1920px] mx-auto px-4">
+                <!-- 타이틀 영역 : 상단 -->
+                <div
+                    class="w-full mx-auto lg:h-[20vh] text-center text-[clamp(1.3rem,3vw,2rem)] lg:text-5xl pt-15 lg:pt-45 font-bold mb-8 lg:mb-5 lg:mb-15">
+                    <h2>따뜻한 세상을 위해<br class="lg:hidden">롯데웰푸드는 실천합니다</h2>
+                </div>
+
+                <!-- 메인 컨텐츠 박스 : 중단 -->
+                <div
+                    class="w-full mb-20 lg:mb-40 flex gap-4 overflow-x-auto scroll-smooth lg:grid lg:grid-cols-3 lg:gap-4 lg:px-4 lg:py-15 text-white">
+                    <article
+                        class="lg:aspect-square shrink-0 w-[80%] h-[31vh] lg:h-[100%] lg:w-full flex items-center relative overflow-hidden group cursor-pointer px-4">
+                        <img class="absolute animate-[imgIncrease_10s_ease-in-out_infinite] inset-0 -z-10 w-full h-full object-cover transition-transform duration-1000
+           group-hover:scale-105" src="/img/esg_img1.jpg" alt="사진">
+                        <div class="px-3 mt-55 lg:mt-40 xl:mt-50 2xl:mt-70">
+                            <h3
+                                class="animate-[textXppear_10s_ease-in-out_infinite] font-bold text-[clamp(1.2rem,3vw,2.5rem)] lg:text-4xl">
+                                환경경영(E)</h3>
+                            <!-- 호버 시 등장 -->
+                            <div class="lg:opacity-0 lg:translate-y-10 transition-all duration-1000 lg:group-hover:opacity-100
+                            lg:group-hover:translate-y-0">
+                                <p class="xl:py-5 text-[clamp(0.6rem,2.2vw,1.25rem)] lg:text-xl lg:tracking-[-0.05em]">
+                                    환경오염을 예방하면서 경제 및 사회의
+                                    지속가능한 개발 추구</p>
+                            </div>
+                            <div class="opacity-0 translate-y-15 transition-all duration-1000 lg:group-hover:opacity-100
+                            lg:group-hover:translate-y-0 mt-5">
+                                <a class="lg:border lg:border-white rounded-3xl lg:px-6 py-3"
+                                    href="https://www.lottewellfood.com/operation/environment">자세히 보기 ></a>
+                            </div>
+                        </div>
+                    </article>
+                    <article
+                        class="lg:aspect-square shrink-0 w-[80%] h-[31vh] lg:h-[100%] lg:w-full flex items-center relative overflow-hidden group cursor-pointer px-4">
+                        <img class="absolute animate-[imgIncrease_10s_ease-in-out_infinite] inset-0 -z-10 w-full h-full object-cover transition-transform duration-1000
+           group-hover:scale-105" src="/img/esg_img2.jpg" alt="사진">
+                        <div class="px-3 mt-55 lg:mt-40 xl:mt-50 2xl:mt-70">
+                            <h3
+                                class="animate-[textXppear_10s_ease-in-out_infinite] font-bold text-[clamp(1.2rem,3vw,2.5rem)] lg:text-4xl">
+                                사회공헌(S)</h3>
+                            <!-- 호버 시 등장 -->
+                            <div class="lg:opacity-0 lg:translate-y-10 transition-all duration-1000 lg:group-hover:opacity-100
+                            lg:group-hover:translate-y-0">
+                                <p class="xl:py-5 text-[clamp(0.6rem,2.2vw,1.25rem)] lg:text-xl lg:tracking-[-0.05em]">
+                                    과자 기부, 지역아동센터 건립, 무료 치과
+                                    진료 등 사회공헌 활동</p>
+                            </div>
+                            <div class="opacity-0 translate-y-15 transition-all duration-1000 lg:group-hover:opacity-100
+                            lg:group-hover:translate-y-0 mt-5">
+                                <a class="lg:border lg:border-white rounded-3xl lg:px-6 py-3"
+                                    href="https://www.lottewellfood.com/operation/society">자세히 보기 ></a>
+                            </div>
+                        </div>
+                    </article>
+                    <article
+                        class="lg:aspect-square  shrink-0 w-[80%] h-[31vh] lg:w-full lg:h-[100%] flex items-center relative overflow-hidden group cursor-pointer px-4">
+                        <img class="absolute animate-[imgIncrease_10s_ease-in-out_infinite] inset-0 -z-10 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                            src="/img/esg_img3.jpg" alt="사진">
+                        <div class="px-3 mt-55 lg:mt-40 xl:mt-50 2xl:mt-70">
+                            <h3
+                                class="animate-[textXppear_10s_ease-in-out_infinite] font-bold text-[clamp(1.2rem,3vw,2.5rem)] lg:text-4xl">
+                                지배구조(G)</h3>
+                            <!-- 호버 시 등장 -->
+                            <div class="opacity-0 lg:translate-y-10 transition-all duration-1000 lg:group-hover:opacity-100
+                            lg:group-hover:translate-y-0">
+                                <p class="xl:py-5 text-[clamp(0.6rem,2.2vw,1.25rem)] lg:text-xl lg:tracking-[-0.05em]">
+                                    회사의 지속 성장의 바탕이 되는 건전한
+                                    지배구조 구축</p>
+                            </div>
+                            <div class="opacity-0 translate-y-15 transition-all duration-1000 lg:group-hover:opacity-100
+                            lg:group-hover:translate-y-0 mt-5">
+                                <a class="lg:border lg:border-white rounded-3xl lg:px-6 py-3"
+                                    href="https://www.lottewellfood.com/operation/governance/coporate">자세히 보기 ></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
