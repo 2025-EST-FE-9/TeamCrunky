@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mainA-fin</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style type="text/tailwindcss">
-        /* ========================== 전체 글꼴 Noto Sans KR 적용 */
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>mainA-fin</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap"
+            rel="stylesheet"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <style type="text/tailwindcss">
+            /* ========================== 전체 글꼴 Noto Sans KR 적용 */
             :root {
                 --font-sans: 'Noto Sans KR', sans-serif;
             }
@@ -27,10 +29,6 @@
                     letter-spacing: -0.5px;
                     line-height: 1.3;
                 }
-                .posi-y-center {
-                    top: 50%;
-                    transform: translatey(-50%);
-                }
                 /* notice */
                 .notice-mo {
                     font-size: clamp(13px, 2.9vw, 18px);
@@ -40,6 +38,7 @@
                 }
                 .notice-item {
                     height: 110px;
+                    box-sizing: border-box;
                 }
                 .top-notice li span.btn::after {
                     content: '';
@@ -70,7 +69,7 @@
                     font-size: clamp(19px, 3vw, 24px);
                 }
                 .card-sub-mo {
-                    font-size: clamp(13px, 2vw, 17px);
+                    font-size: clamp(13px, 1.6vw, 17px);
                 }
                 /* ===================== section3 */
                 .map-height-mo {
@@ -254,7 +253,7 @@
                 animation: slideText3 1s ease-out forwards;
             }
             .slide-text4 {
-                animation: slideText4 1s ease-out forwards;
+                animation: slideText4 1.2s ease-out forwards;
             }
             @keyframes slideText3 {
                 from {
@@ -267,11 +266,15 @@
                 }
             }
             @keyframes slideText4 {
-                from {
+                0% {
                     transform: translateX(20%);
                     opacity: 0;
                 }
-                to {
+                10% {
+                    transform: translateX(20%);
+                    opacity: 0;
+                }
+                100% {
                     transform: translateX(0);
                     opacity: 1;
                 }
@@ -347,18 +350,19 @@
                     font-size: clamp(16px, 1.6vw, 18px);
                 }
                 .renew-card {
-                    width: clamp(650px, 37.4vw, 715px);
-                    height: clamp(387px, 22.4vw, 430px);
+                    width: 715px;
+                    height: 387px;
                 }
                 .renew-top-web {
-                    top: 45%;
+                    top: 40%;
                 }
                 .renew-left-web {
-                    left: 75%;
-                }
+                    left: 50%;
+                    transform: translateX(1%);
+                } 
                 /* ===================== section3 */
                 .map-height-web {
-                    height: 62.5rem;
+                    height: 67.5rem;
                 }
                 .map-title-web {
                     font-size: clamp(45px, 4.4vw, 50px);
@@ -369,10 +373,7 @@
                 .map-strong {
                     font-size: clamp(108px, 6vw, 120px);
                 }
-                .map-pt-lg-12 {
-                    padding-top: 3rem;
-                }
-                .map-pt-lg-20 {
+                .map-pt-lg-5 {
                     padding-top: 5rem;
                 }
                 .pin-text-web {
@@ -387,260 +388,314 @@
                 }
             }
         </style>
-</head>
+    </head>
 
-<body>
-    <div class="wrap">
-        <header>
-            <nav></nav>
-        </header>
-        <!-- ========================== main A ========================== -->
-        <main>
-            <!-- main wrapper / 시멘틱 태그와 실제 컨텐츠 영역 나누기 -->
-            <div id="main-content">
-                <!-- ========================== SECTION 1 -->
-                <section id="main-top">
-                    <!-- bg-top -->
-                    <div class="relative lg:h-[67.5rem] overflow-hidden">
-                        <img class="w-full h-full bg-zoom object-top object-cover lg:hidden"
-                            src="./img/main_header_1023.jpg" alt="top-mo" />
-                        <img class="w-full h-full bg-zoom object-cover hidden lg:block" src="./img/main_header.jpg"
-                            alt="top-web" />
-                        <!-- 1) top-title -->
-                        <div
-                            class="top-title font-bold text-white title-mo title-web absolute top-[20%] px-[20px] lg:left-[25%]">
-                            <div class="title1 slide-text">
-                                MAKE A WELL LIFE<br />
-                                롯데제과의 <span class="text-br block lg:inline">새로운 이름</span>
-                            </div>
-                            <div class="title2 slide-text2">웰컴, 롯데웰푸드</div>
-                        </div>
-                        <!-- 2) top-arrow -->
-                        <div
-                            class="top-arrow w-full hidden absolute posi-y-center px-[40px] lg:flex lg:justify-between">
-                            <img class="cursor-pointer" src="./img/top_visual_button1.png" alt="prev" />
-                            <img class="cursor-pointer" src="./img/top_visual_button2.png" alt="next" />
-                        </div>
-                        <!-- 3) top-slide-bar -->
-                        <div
-                            class="top-slide-bar flex items-center gap-5 absolute left-1/2 -translate-x-1/2 bottom-[37%] lg:bottom-[20%]">
-                            <div class="w-10 h-10 progress-circle flex justify-center items-center">
-                                <div class="w-2 h-2 rounded bg-red-600"></div>
-                            </div>
-                            <div class="w-2 h-2 rounded bg-white"></div>
-                            <div class="w-2 h-2 rounded bg-white"></div>
-                            <div class="w-2 h-2 rounded bg-white"></div>
-                        </div>
-                        <!-- 4) top-notice -->
-                        <div class="top-notice w-full absolute bottom-[20px] lg:bottom-0 lg:px-0 slide-notice">
-                            <ul
-                                class="text-white mx-5 lg:mx-auto lg:max-w-[100rem] flex flex-col-reverse lg:flex-row lg:justify-center notice-mo notice-web">
-                                <li
-                                    class="w-full h-full flex-1 bg-black/60 overflow-hidden px-7 pb-7 lg:pb-0 notice-item lg:flex lg:justify-start lg:items-center">
-                                    <p class="mt-[1.3rem] lg:mt-0 lg:mr-15 font-bold uppercase">notice</p>
-                                    <span class="whitespace-nowrap">영상정보처리기기운영관리방침 변경 안내</span>
-                                </li>
-                                <li
-                                    class="w-ful h-full flex-1 bg-gray-600/70 px-7 pb-7 notice-item lg:flex lg:items-center lg:pb-0">
-                                    <p class="mt-[1.3rem] lg:mt-0 lg:mr-5 font-bold uppercase">ir</p>
-                                    <div class="w-full flex justify-between items-center">
-                                        <p class="">2025년 3분기</p>
-                                        <span class="btn cursor-pointer border rounded-full px-3 py-2">KOR</span>
-                                    </div>
-                                </li>
-                                <li
-                                    class="w-full h-full flex-1 bg-red-500/65 px-7 pb-5 notice-item lg:flex lg:items-center lg:pb-0">
-                                    <p class="mt-[1rem] lg:mt-0 lg:mr-5 font-bold uppercase">stock</p>
-                                    <div class="w-full flex justify-between items-center">
-                                        <span class="font-bold strong-mo strong-web">120,200</span>
-                                        <span>▼ 2,300 / -1.88%</span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-                <!-- ========================== SECTION 2 -->
-                <section id="main-renew">
-                    <div class="max-w-[120rem] mx-auto bg-[#f7f7f7]">
-                        <!-- renew-title -->
-                        <h2
-                            class="renew-title-mo renew-title-web font-bold text-center pt-[5rem] pb-[1.25rem] lg:pt-[6.25rem] lg:pb-[4.5rem]">
-                            롯데웰푸드가 새롭게 찾아왔습니다
-                        </h2>
-                        <!-- renew-box -->
-                        <div class="overflow-x-hidden pb-60 lg:pb-80 relative">
-                            <!-- 1) 슬라이더 박스 영역-->
-                            <div class="max-w-[120rem] mx-auto">
-                                <ul class="flex gap-5 w-full max-h-160 overflow-hidden justify-center">
-                                    <li class="w-full max-w-310 shrink-0">
-                                        <img class="h-full" src="./img/slide_img1_3.jpg" alt="" />
-                                    </li>
-                                    <li class="w-full max-w-310 shrink-0">
-                                        <img class="h-full" src="./img/slide_img1_2.jpg" alt="" />
-                                    </li>
-                                    <li class="w-full max-w-310 shrink-0">
-                                        <img class="h-full" src="./img/slide_img1_1.jpg" alt="" />
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- 2) 슬라이더 카드영역 -->
+    <body>
+        <div class="wrap">
+            <header>
+                <nav></nav>
+            </header>
+            <!-- ========================== main A ========================== -->
+            <main>
+                <!-- main wrapper / 시멘틱 태그와 실제 컨텐츠 영역 나누기 -->
+                <div id="main-content">
+                    <!-- ========================== SECTION 1 -->
+                    <section id="main-top">
+                        <!-- bg-top -->
+                        <div class="relative h-screen lg:h-[67.5rem] overflow-hidden">
+                            <img
+                                class="w-full h-full bg-zoom object-top object-cover lg:hidden"
+                                src="./img/main_header_1023.jpg"
+                                alt="top-mo"
+                            />
+                            <img
+                                class="w-full h-full bg-zoom object-cover hidden lg:block"
+                                src="./img/main_header.jpg"
+                                alt="top-web"
+                            />
+                            <!-- 1) top-title -->
                             <div
-                                class="renew-card rounded-tl-[2rem] bg-white px-9 lg:py-7 lg:pl-18 lg:pr-40 lg:rounded-tl-[4rem] flex flex-col justify-evenly absolute renew-top-mo renew-top-web renew-left-mo renew-left-web">
-                                <!-- 2-1)카드 텍스트 -->
-                                <h3
-                                    class="card-title-mo card-title-web lg:pt-5 font-bold text-[2.5rem] leading-[1.4] slide-text3">
-                                    영아기부터 중장년 이후<br />실버푸드까지
-                                </h3>
-                                <p class="card-sub-mo card-sub-web text-gray-500 slide-text4 mb-3">
-                                    Food Tech의 선도기업을 지향하고 새로운 시장과
-                                    <span>지역에 대한 진출을 통해 보다 많은 사람에게 더</span><span>나은 삶을 제공합니다.</span>
-                                </p>
-                                <!-- 2-2) 슬라이드바 -->
-                                <div class="flex items-center gap-8 justify-center lg:justify-start">
-                                    <div
-                                        class="hidden lg:block w-10 h-10 border-1 border-gray-400 rounded-full p-3 flex justify-center items-center cursor-pointer">
-                                        <img src="./img/ico_renew_swiper_btn_prev.png" alt="" />
-                                    </div>
-                                    <div class="flex gap-3">
-                                        <div class="w-2 h-2 rounded bg-red-600"></div>
-                                        <div class="w-2 h-2 rounded bg-gray-200"></div>
-                                        <div class="w-2 h-2 rounded bg-gray-200"></div>
-                                        <div class="w-2 h-2 rounded bg-gray-200"></div>
-                                    </div>
-                                    <div
-                                        class="hidden lg:block w-10 h-10 border-1 border-gray-400 rounded-full p-3 flex justify-center items-cente cursor-pointer">
-                                        <img class="" src="./img/ico_renew_swiper_btn_next.png" alt="" />
-                                    </div>
+                                class="top-title font-bold text-white title-mo title-web absolute top-[20%] px-[20px] lg:left-[25%]"
+                            >
+                                <div class="title1 slide-text">
+                                    MAKE A WELL LIFE<br />
+                                    롯데제과의 <span class="text-br block lg:inline">새로운 이름</span>
                                 </div>
+                                <div class="title2 slide-text2">웰컴, 롯데웰푸드</div>
                             </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- ========================== SECTION 3 -->
-                <section id="main-map">
-                    <!-- map 전체영역 -->
-                    <!-- <div class="max-w-[120rem] w-full h-full max-h-[80rem] lg:h-[62.5rem] overflow-hidden relative"> -->
-                    <div
-                        class="max-w-[120rem] mx-auto w-full h-full map-height-mo map-height-web overflow-hidden relative">
-                        <!-- map-background -->
-                        <img class="w-full h-full object-cover lg:hidden" src="./img/map_bg_mo.jpg" alt="bg-map-mo" />
-                        <img class="w-full h-full object-center hidden lg:block" src="./img/map_bg.jpg"
-                            alt="bg-map-web" />
-                        <!-- map-contents-->
-                        <div class="w-full absolute h-full top-0 left-1/2 -translate-x-1/2">
-                            <!-- map-title -->
-                            <h2
-                                class="map-title-mo map-title-web map-pt map-pt-lg-12 text-center font-bold slide-text5">
-                                글로벌리더 롯데웰푸드,
-                                <span class="block lg:inline"> 더 크게 성장하겠습니다</span>
-                            </h2>
-                            <!-- map max-width:1600px -->
-                            <div class="max-w-[100rem] map-pt2 map-pt-lg-20 mx-auto">
-                                <!-- map-image -->
-                                <div class="relative">
-                                    <!-- slider-btn -->
-                                    <div class="grow-slide w-full px-10 flex justify-between absolute top-[30%] z-20">
-                                        <img class="h-full object-cover cursor-pointer lg:hidden"
-                                            src="./img/ico_left_btn_mo.png" alt="slider-btn-mo" />
-                                        <img class="h-full object-cover cursor-pointer hidden lg:block"
-                                            src="./img/ico-left-btn-web.png" alt="slider-btn-web">
-                                        <img class="h-full object-cover cursor-pointer lg:hidden"
-                                            src="./img/ico_right_btn_mo.png" alt="slider-btn-mo" />
-                                        <img class="h-full object-cover cursor-pointer hidden lg:block"
-                                            src="./img/ico-right-btn-web.png" alt="slider-btn-web">
-                                    </div>
-                                    <img class="w-full h-full object-right lg:hidden" src="./img/map-mo-h.png"
-                                        alt="map-mo" />
-                                    <img class="w-full h-full object-cover hidden lg:block" src="./img/map1.png"
-                                        alt="map-web" />
-                                    <div class="pin-group font-bold pin-text-mo pin-text-web">
-                                        <div
-                                            class="slide-text pin flex gap-1 items-center absolute lg:flex-col lg:gap-0 lg:top-[13%] top-[18%] lg:right-[20%] right-[30%]">
-                                            러시아
-                                        </div>
-                                        <div
-                                            class="slide-text2 pin flex gap-1 items-center absolute lg:flex-col lg:gap-0 lg:top-[18%] top-[23%] lg:left-[65%] left-[40%]">
-                                            카자흐스탄
-                                        </div>
-                                        <div
-                                            class="slide-text pin flex gap-1 items-center absolute lg:flex-col lg:gap-0 lg:top-[23%] top-[28%] lg:left-[50%] left-[20%]">
-                                            벨기에
-                                        </div>
-                                        <div
-                                            class="slide-text2 pin flex gap-1 items-center absolute lg:flex-col lg:gap-0 lg:top-[28%] top-[33%] lg:left-[65%] left-[43%]">
-                                            파키스탄
-                                        </div>
-                                        <div
-                                            class="slide-text pin flex gap-1 items-center absolute lg:flex-col lg:gap-0 lg:top-[30%] top-[35%] lg:right-[18%] right-[33%]">
-                                            중국
-                                        </div>
-                                        <div
-                                            class="slide-text2 pin flex gap-1 items-center absolute lg:flex-col lg:gap-0 lg:top-[35%] top-[40%] lg:right-[30%] right-[40%]">
-                                            미얀마
-                                        </div>
-                                        <div
-                                            class="slide-text pin flex gap-1 items-center absolute lg:flex-col lg:gap-0 lg:top-[43%] top-[48%] lg:left-[68%] left-[45%]">
-                                            인도
-                                        </div>
-                                        <div
-                                            class="slide-text2 pin flex gap-1 items-center absolute lg:flex-col lg:gap-0 lg:top-[50%] top-[55%] lg:right-[20%] right-[35%]">
-                                            싱가포르
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- map-info-box -->
+                            <!-- 2) top-arrow -->
                             <div
-                                class="absolute w-full top-[15%] left-0 lg:top-[18%] lg:left-[15%] xl:top-[22%] xl:left-[22%]">
+                                class="top-arrow w-full hidden absolute top-1/2 -translate-y-1/2 px-[40px] lg:flex lg:justify-between"
+                            >
+                                <img class="cursor-pointer" src="./img/top_visual_button1.png" alt="prev" />
+                                <img class="cursor-pointer" src="./img/top_visual_button2.png" alt="next" />
+                            </div>
+                            <!-- 3) top-slide-bar -->
+                            <div
+                                class="top-slide-bar flex items-center gap-5 absolute left-1/2 -translate-x-1/2 bottom-[37%] lg:bottom-[20%]"
+                            >
+                                <div class="w-10 h-10 progress-circle flex justify-center items-center">
+                                    <div class="w-2 h-2 rounded bg-red-600"></div>
+                                </div>
+                                <div class="w-2 h-2 rounded bg-white"></div>
+                                <div class="w-2 h-2 rounded bg-white"></div>
+                                <div class="w-2 h-2 rounded bg-white"></div>
+                            </div>
+                            <!-- 4) top-notice -->
+                            <div class="top-notice w-full absolute bottom-[20px] lg:bottom-0 lg:px-0 slide-notice">
                                 <ul
-                                    class="flex justify-between map-text-mo map-text-web slide-map-box lg:flex-col lg:gap-5">
-                                    <li class="flex flex-1 flex-col items-center gap-15 lg:flex-row lg:gap-5">
-                                        <p class="font-bold">해외법인</p>
-                                        <p class="leading-none lg:font-bold">
-                                            <span class="map-strong font-bold text-red-600">8</span>개국
-                                        </p>
+                                    class="text-white mx-5 lg:mx-auto lg:max-w-[100rem] flex flex-col-reverse lg:flex-row lg:justify-center notice-mo notice-web"
+                                >
+                                    <li
+                                        class="w-full h-full flex-1 bg-black/60 overflow-hidden px-7 pb-7 lg:pb-0 notice-item lg:flex lg:justify-start lg:items-center"
+                                    >
+                                        <p class="mt-[1.3rem] lg:mt-0 lg:mr-15 font-bold uppercase">notice</p>
+                                        <span class="whitespace-nowrap">영상정보처리기기운영관리방침 변경 안내</span>
                                     </li>
-                                    <li class="flex flex-1 flex-col items-center gap-15 lg:flex-row lg:gap-5">
-                                        <p class="font-bold">해외공장</p>
-                                        <p class="leading-none lg:font-bold">
-                                            <span class="map-strong font-bold text-red-600">21</span>개
-                                        </p>
+                                    <li
+                                        class="w-full h-full flex-1 bg-gray-600/70 px-7 pb-7 notice-item lg:flex lg:items-center lg:pb-0"
+                                    >
+                                        <p class="mt-[1.3rem] lg:mt-0 lg:mr-5 font-bold uppercase">ir</p>
+                                        <div class="w-full flex justify-between items-center">
+                                            <p class="">2025년 3분기</p>
+                                            <span class="btn cursor-pointer border rounded-full px-3 py-2">KOR</span>
+                                        </div>
                                     </li>
-                                    <li class="flex flex-1 flex-col items-center gap-15 lg:flex-row lg:gap-5">
-                                        <p class="font-bold">해외매출</p>
-                                        <p class="leading-none lg:font-bold">
-                                            <span class="map-strong font-bold text-red-600">0.8</span>조
-                                        </p>
+                                    <li
+                                        class="w-full h-full flex-1 bg-red-500/65 px-7 pb-5 notice-item lg:flex lg:items-center lg:pb-0"
+                                    >
+                                        <p class="mt-[1rem] lg:mt-0 lg:mr-5 font-bold uppercase">stock</p>
+                                        <div class="w-full flex justify-between items-center">
+                                            <span class="font-bold strong-mo strong-web">120,200</span>
+                                            <span>▼ 2,300 / -1.88%</span>
+                                        </div>
                                     </li>
                                 </ul>
                             </div>
-                            <!-- 공시정보 -->
-                            <div
-                                class="absolute bottom-[5%] left-1/2 -translate-x-1/2 p-5 bg-gray-100/50 lg:bg-transparent flex flex-col lg:flex-row lg:justify-center gap-5 lg:gap-5 item-text-mo item-text-web item-cont-height min-w-[330px] h-full">
-                                <div class="flex justify-between gap-5">
-                                    <a class="map-box-scale flex items-center lg:flex-col gap-3 item-height" href="#">
-                                        <img class="w-full h-full object-cover" src="./img/link_info1.png" alt="" />
-                                        <span class="shrink-0">공시정보</span>
-                                    </a>
-                                    <a class="map-box-scale flex items-center lg:flex-col gap-3 item-height" href="#">
-                                        <img class="w-full h-full object-cover" src="./img/link_info2.png" alt="" />
-                                        <span class="shrink-0">주가정보</span>
-                                    </a>
+                        </div>
+                    </section>
+                    <!-- ========================== SECTION 2 -->
+                    <section id="main-renew">
+                        <div class="max-w-[120rem] mx-auto bg-[#f7f7f7] lg:h-screen">
+                            <!-- renew-title -->
+                            <h2
+                                class="renew-title-mo renew-title-web font-bold text-center pt-[5rem] pb-[1.25rem] lg:pt-[6.25rem] lg:pb-[4.5rem]"
+                            >
+                                롯데웰푸드가 새롭게 찾아왔습니다
+                            </h2>
+                            <!-- renew-box -->
+                            <div class="overflow-x-hidden pb-60 lg:pb-70 relative">
+                                <!-- 1) 슬라이더 박스 영역-->
+                                <div class="max-w-[120rem] mx-auto">
+                                    <ul class="flex gap-5 w-full max-h-160 overflow-hidden justify-center">
+                                        <li class="w-full max-w-310 shrink-0">
+                                            <img class="h-full" src="./img/slide_img1_3.jpg" alt="" />
+                                        </li>
+                                        <li class="w-full max-w-310 shrink-0">
+                                            <img class="h-full" src="./img/slide_img1_2.jpg" alt="" />
+                                        </li>
+                                        <li class="w-full max-w-310 shrink-0">
+                                            <img class="h-full" src="./img/slide_img1_1.jpg" alt="" />
+                                        </li>
+                                    </ul>
                                 </div>
-                                <a class="map-box-scale flex flex-col items-start gap-3 item-height relative h-auto"
-                                    href="#">
-                                    <img class="w-full h-full lg:object-cover" src="./img/link_info3.png" alt="" />
-                                    <span class="world">세계속의 롯데웰푸드</span>
-                                </a>
+                                <!-- 2) 슬라이더 카드영역 -->
+                                <div
+                                    class="renew-card rounded-tl-[2rem] bg-white px-9 lg:py-2 lg:pl-18 lg:pr-40 lg:rounded-tl-[4rem] flex flex-col justify-evenly absolute renew-top-mo renew-top-web renew-left-mo renew-left-web"
+                                >
+                                    <!-- 2-1)카드 텍스트 -->
+                                    <h3
+                                        class="card-title-mo card-title-web lg:pt-5 font-bold text-[2.5rem] leading-[1.4] slide-text3"
+                                    >
+                                        영아기부터 중장년 이후<br />실버푸드까지
+                                    </h3>
+                                    <p class="card-sub-mo card-sub-web text-gray-500 slide-text4 mb-3">
+                                        Food Tech의 선도기업을 지향하고 새로운 시장과
+                                        <span class="inline-block lg:inline">지역에 대한 </span>
+                                        <span class="lg:inline-block">진출을 통해 보다 많은 사람에게 더 </span
+                                            ><span class="inline-block lg:inline">나은 삶을 제공합니다.</span>
+                                    </p>
+                                    <!-- 2-2) 슬라이드바 -->
+                                    <div class="flex items-center gap-8 justify-center lg:justify-start">
+                                        <div
+                                            class="hidden lg:flex w-10 h-10 border-1 border-gray-400 rounded-full p-3 justify-start items-center cursor-pointer"
+                                        >
+                                            <img src="./img/ico_renew_swiper_btn_prev.png" alt="" />
+                                        </div>
+                                        <div class="flex gap-3">
+                                            <div class="w-2 h-2 rounded bg-red-600"></div>
+                                            <div class="w-2 h-2 rounded bg-gray-200"></div>
+                                            <div class="w-2 h-2 rounded bg-gray-200"></div>
+                                            <div class="w-2 h-2 rounded bg-gray-200"></div>
+                                        </div>
+                                        <div
+                                            class="hidden lg:flex w-10 h-10 border-1 border-gray-400 rounded-full p-3 justify-end items-center cursor-pointer"
+                                        >
+                                            <img class="" src="./img/ico_renew_swiper_btn_next.png" alt="" />
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </section>
-            </div>
-        </main>
-        <footer></footer>
-    </div>
-</body>
-
+                    </section>
+                    <!-- ========================== SECTION 3 -->
+                    <section id="main-map">
+                        <!-- map 전체영역 -->
+                        <div class="max-w-[120rem] mx-auto w-full h-full map-height-mo map-height-web overflow-hidden relative">
+                            <!-- map-background -->
+                            <img
+                                class="w-full h-full object-cover lg:hidden"
+                                src="./img/map_bg_mo.jpg"
+                                alt="bg-map-mo"
+                            />
+                            <img
+                                class="w-full h-full object-center hidden lg:block"
+                                src="./img/map_bg.jpg"
+                                alt="bg-map-web"
+                            />
+                            <!-- map-contents-->
+                            <div class="w-full absolute h-full top-0 left-1/2 -translate-x-1/2">
+                                <!-- map-title -->
+                                <h2
+                                    class="map-title-mo map-title-web map-pt map-pt-lg-5 text-center font-bold slide-text5"
+                                >
+                                    글로벌리더 롯데웰푸드,
+                                    <span class="block lg:inline"> 더 크게 성장하겠습니다</span>
+                                </h2>
+                                <!-- map max-width:1600px -->
+                                <div class="max-w-[100rem] map-pt2 mx-auto">
+                                    <!-- map-image -->
+                                    <div class="relative">
+                                        <!-- slider-btn -->
+                                        <div class="grow-slide w-full px-10 flex justify-between absolute top-[30%] z-20">
+                                            <img
+                                                class="h-full object-cover cursor-pointer lg:hidden"
+                                                src="./img/ico_left_btn_mo.png"
+                                                alt="slider-btn-mo"
+                                            />
+                                            <img class="h-full object-cover cursor-pointer hidden lg:block" src="./img/ico-left-btn-web.png" alt="slider-btn-web">
+                                            <img
+                                                class="h-full object-cover cursor-pointer lg:hidden"
+                                                src="./img/ico_right_btn_mo.png"
+                                                alt="slider-btn-mo"
+                                            />
+                                            <img class="h-full object-cover cursor-pointer hidden lg:block" src="./img/ico-right-btn-web.png" alt="slider-btn-web">
+                                        </div>
+                                        <img
+                                            class="w-full h-full object-right lg:hidden"
+                                            src="./img/map-mo-h.png"
+                                            alt="map-mo"
+                                        />
+                                        <img
+                                            class="w-full h-full object-cover hidden lg:block"
+                                            src="./img/map1.png"
+                                            alt="map-web"
+                                        />
+                                        <div class="pin-group font-bold pin-text-mo pin-text-web">
+                                            <div
+                                                class="slide-text pin flex gap-1 items-center absolute lg:flex-col lg:gap-0 lg:top-[13%] top-[18%] lg:right-[20%] right-[30%]"
+                                            >
+                                                러시아
+                                            </div>
+                                            <div
+                                                class="slide-text2 pin flex gap-1 items-center absolute lg:flex-col lg:gap-0 lg:top-[18%] top-[23%] lg:left-[65%] left-[40%]"
+                                            >
+                                                카자흐스탄
+                                            </div>
+                                            <div
+                                                class="slide-text pin flex gap-1 items-center absolute lg:flex-col lg:gap-0 lg:top-[23%] top-[28%] lg:left-[50%] left-[20%]"
+                                            >
+                                                벨기에
+                                            </div>
+                                            <div
+                                                class="slide-text2 pin flex gap-1 items-center absolute lg:flex-col lg:gap-0 lg:top-[28%] top-[33%] lg:left-[65%] left-[43%]"
+                                            >
+                                                파키스탄
+                                            </div>
+                                            <div
+                                                class="slide-text pin flex gap-1 items-center absolute lg:flex-col lg:gap-0 lg:top-[30%] top-[35%] lg:right-[18%] right-[33%]"
+                                            >
+                                                중국
+                                            </div>
+                                            <div
+                                                class="slide-text2 pin flex gap-1 items-center absolute lg:flex-col lg:gap-0 lg:top-[35%] top-[40%] lg:right-[30%] right-[40%]"
+                                            >
+                                                미얀마
+                                            </div>
+                                            <div
+                                                class="slide-text pin flex gap-1 items-center absolute lg:flex-col lg:gap-0 lg:top-[43%] top-[48%] lg:left-[68%] left-[45%]"
+                                            >
+                                                인도
+                                            </div>
+                                            <div
+                                                class="slide-text2 pin flex gap-1 items-center absolute lg:flex-col lg:gap-0 lg:top-[50%] top-[55%] lg:right-[20%] right-[35%]"
+                                            >
+                                                싱가포르
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- map-info-box -->
+                                <div
+                                    class="absolute w-full top-[15%] left-0 lg:top-1/2 lg:-translate-y-1/2 lg:left-[15%] xl:left-[25%]"
+                                >
+                                    <ul
+                                        class="flex justify-between map-text-mo map-text-web slide-map-box lg:flex-col lg:gap-5"
+                                    >
+                                        <li class="flex flex-1 flex-col items-center gap-15 lg:flex-row lg:gap-5">
+                                            <p class="font-bold">해외법인</p>
+                                            <p class="leading-none lg:font-bold">
+                                                <span class="map-strong font-bold text-red-600">8</span>개국
+                                            </p>
+                                        </li>
+                                        <li class="flex flex-1 flex-col items-center gap-15 lg:flex-row lg:gap-5">
+                                            <p class="font-bold">해외공장</p>
+                                            <p class="leading-none lg:font-bold">
+                                                <span class="map-strong font-bold text-red-600">21</span>개
+                                            </p>
+                                        </li>
+                                        <li class="flex flex-1 flex-col items-center gap-15 lg:flex-row lg:gap-5">
+                                            <p class="font-bold">해외매출</p>
+                                            <p class="leading-none lg:font-bold">
+                                                <span class="map-strong font-bold text-red-600">0.8</span>조
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- 공시정보 -->
+                                <div
+                                    class="absolute bottom-[5%] left-1/2 -translate-x-1/2 p-5 bg-gray-100/50 lg:bg-transparent flex flex-col lg:flex-row lg:justify-center gap-5 lg:gap-5 item-text-mo item-text-web item-cont-height min-w-[330px]"
+                                >
+                                    <div class="flex justify-between gap-5">
+                                        <a
+                                            class="map-box-scale flex items-center lg:flex-col gap-3 item-height"
+                                            href="#"
+                                        >
+                                            <img class="w-full h-full object-cover" src="./img/link_info1.png" alt="" />
+                                            <span class="shrink-0">공시정보</span>
+                                        </a>
+                                        <a
+                                            class="map-box-scale flex items-center lg:flex-col gap-3 item-height"
+                                            href="#"
+                                        >
+                                            <img class="w-full h-full object-cover" src="./img/link_info2.png" alt="" />
+                                            <span class="shrink-0">주가정보</span>
+                                        </a>
+                                    </div>
+                                    <a
+                                        class="map-box-scale flex flex-col items-start gap-3 item-height relative h-auto"
+                                        href="#"
+                                    >
+                                        <img class="w-full h-full lg:object-cover" src="./img/link_info3.png" alt="" />
+                                        <span class="world">세계속의 롯데웰푸드</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </main>
+            <footer></footer>
+        </div>
+    </body>
 </html>
